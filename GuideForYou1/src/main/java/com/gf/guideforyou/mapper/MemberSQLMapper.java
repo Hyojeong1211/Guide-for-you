@@ -37,14 +37,14 @@ public interface MemberSQLMapper {
 	
 	
 	
-	///추가
+	
 	
 	
 	@Select("SELECT * FROM GF_MEMBER l MEMBER_NICK=#{member_nick}")
 	public  MemberBasicVo selectMemberInfoByMembernick(String member_nick);
-	//닉네임중복검사용 추가했습니다.(김효정)
 	
-	//name추가했습니다(김효정)
+	
+	
 	@Insert("INSERT INTO GF_MEMBER VALUES(GF_MEMBER_SEQ.NEXTVAL,'n',#{member_id},#{member_pw},#{member_name},#{member_nick},"
 				+ "#{member_phone},#{member_kakao},#{member_age},#{member_gender},#{member_address},#{member_email},SYSDATE,'n',NULL)")
 	public void insertMember(MemberBasicVo vo);
