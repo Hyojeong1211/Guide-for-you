@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Thu Jan 16 23:18:32 CET 2020
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\USER\\.m2\\repository\\org\\springframework\\spring-web\\5.0.7.RELEASE\\spring-web-5.0.7.RELEASE.jar=C\:\\tomcat\\apache-tomcat-8.5.47\\wtpwebapps\\GuideForYou1\\WEB-INF\\lib\\spring-web-5.0.7.RELEASE.jar
+org.eclipse.jst.jee.server\:GuideForYou1=C\:\\tomcat\\apache-tomcat-8.5.47\\wtpwebapps\\GuideForYou1
