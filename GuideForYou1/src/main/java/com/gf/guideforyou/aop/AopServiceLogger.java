@@ -16,12 +16,12 @@ public class AopServiceLogger {
 	@Around("servicePointCut()")
 	public Object printLog(ProceedingJoinPoint pjp) throws Throwable {
 		
-		String logText = "=====" + pjp.getSignature().getName() + " 실행 시작 =====";
+		String logText = "=====" + pjp.getSignature().getName() + " Start =====";
 		System.out.println(logText);
 		
 		Object obj = pjp.proceed();
 		
-		logText = "=====" + pjp.getSignature().getName() + " 실행 완료 =====";
+		logText = "=====" + pjp.getSignature().getName() + " Finish =====";
 		System.out.println(logText);
 
 		return obj;
