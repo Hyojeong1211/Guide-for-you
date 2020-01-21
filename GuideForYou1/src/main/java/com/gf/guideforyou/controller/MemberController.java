@@ -26,9 +26,7 @@ import com.gf.guideforyou.service.*;
 import com.gf.guideforyou.vo.*;
 import org.springframework.ui.Model;
 
-//컨트롤러 class를 추가할 경우 Member를 써주기
-//포워딩 하는 변수에 member 적기 (소문자)
-//session에 들어가는 정보는 "memberSession"으로 부탁드립니다.
+
 
 @Controller
 public class MemberController {
@@ -99,15 +97,15 @@ public class MemberController {
 	@RequestMapping("/editProfilePage")
 	public String editProfilePage(HttpSession session, Model model) {
 
-		System.out.println("회원정보수정페이지시작-->");
+		System.out.println("Editing profile process start-->");
 
-		// 세션에서 member_idx가져오기
+		// Bring member_idx from Session
 		SessionUserDataVo editProfileSessionData = (SessionUserDataVo) session.getAttribute("memberSession");
 		int editProfileMember_idx = editProfileSessionData.getMember_idx();
 
 		System.out.println("member_idx=" + editProfileMember_idx);
 
-		// member_idx를 이용해서 내정보 가져오기
+		// Bring my information from member_idx
 		MemberBasicVo membervo = new MemberBasicVo();
 		membervo.setMember_idx(editProfileMember_idx);
 
@@ -121,9 +119,9 @@ public class MemberController {
 	@RequestMapping("/editProfileAction")
 	public String editProfileAction(MemberBasicVo param, MultipartFile[] files, HttpSession session) {
 
-		System.out.println("파일저장시작-->");
+		System.out.println("File saving start-->");
 
-		// 파일 저장 로직 시작....
+		// File saving logic start....
 		ArrayList<UploadFileVo> fileList = new ArrayList<UploadFileVo>();
 		ArrayList<String> linkList = new ArrayList<String>();
 
@@ -136,7 +134,7 @@ public class MemberController {
 
 			String originalFilename = file.getOriginalFilename();
 
-			// 파일명 바꾸기....(시간,랜덤 값)
+			// Changing File name....(time,random)
 			String randomName = UUID.randomUUID().toString();
 			System.out.println(randomName);
 
@@ -161,13 +159,13 @@ public class MemberController {
 
 		}
 
-		// 프로필사진의 링크를 데이터베이스에 넣어주기
+		// pur profile picture link to Data base
 		if (linkList.size() == 1) {
 			param.setMember_profile_photo(linkList.get(0));
-			System.out.println("프로필사진저장완료");
+			System.out.println("profile page saving done");
 		}
 
-		// 회원정보수정
+		
 		memberService.editProfile(param);
 
 		return "myPage";
@@ -198,10 +196,10 @@ public class MemberController {
 			MimeMessageHelper messageHelper = null;
 				messageHelper = new MimeMessageHelper(message, true, "UTF-8");
 		message = mailSender.createMimeMessage();
-			messageHelper.setSubject("가이드포유 임시비밀번호"); // 제목
-			messageHelper.setText("가이드포유 임시 비밀번호는  "+memberService.passwordMaker(param)+
-					"  입니다", true);
-			messageHelper.setFrom("admin", "관리자");
+			messageHelper.setSubject(""); // title
+			messageHelper.setText("Your Guide for you temporary password is"+memberService.passwordMaker(param)+
+					true);
+			messageHelper.setFrom("admin", "Admin");
 			messageHelper.setTo(param.getMember_email());
 			
 			// messageHelper.addInline(contentId, dataSource);
