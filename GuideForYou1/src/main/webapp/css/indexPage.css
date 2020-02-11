@@ -34,9 +34,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color:black;
+    color:whitesmoke;
     font-family: 'Nanum Brush Script', cursive;
-    font-size:3.5em;
+    font-size:3em;
     margin-bottom: 80px;
     font-weight: 550;
 }
@@ -74,6 +74,8 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom:100px;
+    margin-left:20px;
+ 
 }
 
 .indexPage_main-categoryBox_localBox>a{
@@ -93,6 +95,7 @@
     color: bisque;
     font-family: 'East Sea Dokdo', cursive;
     font-size: 32px;
+    margin-left:30px;
 }
 
 
