@@ -38,10 +38,10 @@
             			</a>
             			<div class="header_column2">
                 			<a href="./loginPage" class="headerWhenNotLogin headerWhenNotLogin_first">
-                    			<div class="header-login">로그인</div>
+                    			<div class="header-login">Sign in</div>
                 			</a>
                 			<a href="./joinMemberPage" class="headerWhenNotLogin">
-                    			<div class="header-join">회원가입</div>
+                    			<div class="header-join">Sign up</div>
                 			</a>
             			</div>
         			</div>
@@ -60,19 +60,19 @@
                     		<a href="./myPage" class="headerWhenLogin headerWhenLogin_first">
                         		<c:choose>
                         			<c:when test="${memberSession.member_profile_photo == 'n' }">
-                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="MainImages/basicMemberProfile.jpg">
+                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="MainImages/basicMemberProfile.png">
                         			</c:when>
                         			<c:otherwise>
                         				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="${memberSession.member_profile_photo }">
                         			</c:otherwise>
                         		</c:choose> 
-                        		<div class="header-row header_mypageText">마이페이지</div>
+                        		<div class="header-row header_mypageText">My page</div>
                     		</a>
                     		<a href="./logoutAction" class="headerWhenLogin headerWhenLogin_second">
-                        		<div class="header-row">로그아웃</div>
+                        		<div class="header-row">Sign out</div>
                     		</a>
                     		<a href="./tourEnrollPage" class="headerWhenLogin headerWhenLogin_third">
-                        		<div class="header-row">투어게시</div>
+                        		<div class="header-row">Post my tour</div>
                     		</a>
                 		</div>
             		</div>
@@ -82,7 +82,7 @@
 
     <main class="tourEnrollPage_main">
         <div class="tourEnrollPage_main-top">
-            	투어수정
+            	Edit tour
         </div>
         <form action="./tourContentUpdateAction" method="post">
             <div class="tourEnrollPage_main-form">
@@ -90,72 +90,82 @@
                 <div class="tourEnrollPage_main-form_inputBox">
                     <!-- 가이드의 member_idx 넘겨주기-->
                     <input name="member_idx" value="${mainTourContentUpdateData.memberBasicVo.member_idx }" type="hidden">
-                    <div class="tourEnrollPage_main-text">가이드</div>
+                    <div class="tourEnrollPage_main-text">Guide</div>
                     <div class="tourEnrollPage_main-input">${mainTourContentUpdateData.memberBasicVo.member_name }</div>
                 </div>
                 <div class="tourEnrollPage_main-form_inputBox">
-                    <div class="tourEnrollPage_main-text">연락처</div>
+                    <div class="tourEnrollPage_main-text">phone</div>
                     <div class="tourEnrollPage_main-input">${mainTourContentUpdateData.memberBasicVo.member_kakao}</div>
                 </div>
                 <div class="tourEnrollPage_main-form_inputBox">
                     <!-- 지역카테고리 location_idx 넘겨주기-->
-                    <div class="tourEnrollPage_main-text">투어지역</div>
+                    <div class="tourEnrollPage_main-text">Tour Residence</div>
                     <select name="location_idx">
-                        <option value="1">서울</option>
-                        <option value="2">경기</option>
-                        <option value="3">강원</option>
-                        <option value="4">충청</option>
-                        <option value="5">전라</option>
-                        <option value="6">경상</option>
-                        <option value="7">제주</option>
+                        <option value="1">Seoul</option>
+                        <option value="2">Gyeonggi</option>
+                        <option value="3">Gangwon</option>
+                        <option value="4">Chungcheong</option>
+                        <option value="5">Jeonla</option>
+                        <option value="6">Gyeongsang</option>
+                        <option value="7">Jeju</option>
                     </select>
                 </div>
                 <div class="tourEnrollPage_main-form_inputBox">
                     <!-- 투어장소세부지역 tour_tourspot 넘겨주기-->
-                    <div class="tourEnrollPage_main-text">투어장소</div>
+                    <div class="tourEnrollPage_main-text">Tour area</div>
                     <input name="tour_tourspot" type="text" value="${mainTourContentUpdateData.tourBasicVo.tour_tourspot }" >
                 </div>
                 <div class="tourEnrollPage_main-form_inputBox">
                     <!-- tour_max_number 넘겨주기-->
-                    <div class="tourEnrollPage_main-text">최대모집인원수</div>
+                    <div class="tourEnrollPage_main-text">Max Participants</div>
                     <input name="tour_max_number" type="number" value="${mainTourContentUpdateData.tourBasicVo.tour_max_number }">
                 </div>
                 <div class="tourEnrollPage_main-form_inputBox">
                     <!-- tour_vehicle 넘겨주기-->
-                    <div class="tourEnrollPage_main-text">이동수단</div>
+                    <div class="tourEnrollPage_main-text">transportation</div>
                     <input name="tour_vehicle" type="text"  value="${mainTourContentUpdateData.tourBasicVo.tour_vehicle }">
                 </div>
                 <div class="tourEnrollPage_main-form_inputBox">
                     <!--tour_tourdate넘겨주기-->
-                    <div class="tourEnrollPage_main-text">투어날짜</div>
+                    <div class="tourEnrollPage_main-text">Tour date</div>
                     <input name="tour_tourdate" type="date">
                 </div>
                 <div class="tourEnrollPage_main-form_inputBox tourEnroll_content">
                     <!--tour_intro넘겨주기-->
-                    <div class="tourEnroll_content_text">투어제목</div>
+                    <div class="tourEnroll_content_text">Title</div>
                     <textarea name="tour_intro" class="tourEnroll_content-tourTile">${mainTourContentUpdateData.tourBasicVo.tour_intro }</textarea>
                 </div>
                 <div class="tourEnrollPage_main-form_inputBox tourEnroll_content">
                     <!--tour_content넘겨주기-->
-                    <div class="tourEnroll_content_text">투어소개</div>
+                    <div class="tourEnroll_content_text">Tour contents</div>
                     <textarea name="tour_content" class="tourEnroll_content-tourContent">${mainTourContentUpdateData.tourBasicVo.tour_content }</textarea>
                 </div>
                 <!--투어 완료 여부 (n) 넘겨주기-->
                 <input name="tour_complete" value="n" type="hidden">
                 <div class="tourEnrollPage_main-form_Photo">
                     <!--투어 사진 넘겨주기-->
-                    <div class="tourEnrollPage_main_photo-text">사진등록</div>
+                    <div class="tourEnrollPage_main_photo-text">Upload photo</div>
                     <div class="tourEnrollPage_main-photoBox">
-                        <div class="tourPhoto_input">---사진 등록하는것 집어넣기---</div>
-                        <div class="tourPhoto_alert">※ 사진은 최대 5장 업로드 가능하고, 첫번째 사진이 대표사진이 됩니다.</div>
-                    </div>
+                       <div class="tourEnrollPage_main_photo-text">upload</div>
+                    <div class="tourEnrollPage_main-photoBox">
+                        <div class="tourPhoto_input">
+							<!--  <input type="type" readonly="readonly" id="file_route">
+                            <label>
+                                	사진첨부
+                             	<input type="file" name="files" onchange="javascriptdocument.getElementById('file_route').value=this.value">
+                            </label> -->
+                            <div class="buttons">            
+                                <input type="file" name="files"> <input type="button" class="btnAdd" value="Add"><br>        
+                            </div>
+						</div>
+                     
                 </div>
-                <button type="submit" class="tourEnrollBtn">등록하기</button>
+                <button type="submit" class="tourEnrollBtn">Post!</button>
             </div>
         </form>
     </main>
 
-    <div>--------footer--------</div>
+ 
 
     
 </body>
