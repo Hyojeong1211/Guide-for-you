@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
     <script type="text/javascript" src="${pageContext.request.contextPath}/myPage_js/getStarJquery.raty.js"></script>
-    <title>신용정보 페이지</title>
+    <title>Credit info page</title>
 
     <script>
             function openCity(evt, cityName) {
@@ -152,7 +152,7 @@
                 </div>
                 
                 
-                <!-- 가이드 총평점 -->
+                <!-- Guide's start point -->
                 <div id="evaluation_guide" class="evaluation_guide tabcontent">
                     <div class="credit_main_sector_score">
                         <i class="far fa-star"></i>
@@ -185,7 +185,7 @@
 
 
 
-                <!-- 고객 총 평점 입니다 -->
+                <!-- Guest's star point -->
                 <div id="evaluation_customer" class="evaluation_customer tabcontent">
                     <div class="credit_main_sector_score">
                         <i class="far fa-star"></i>
