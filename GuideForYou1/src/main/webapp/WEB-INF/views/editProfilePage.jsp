@@ -12,23 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
             <title>editProfilePage</title>
-            <script>
-            
-            
-         
-            /*  안됨
-                $(function(){
-                	$("#EditProfilePage-Form-input").focus(fucntion({
-                		$(".EditProfilePage-Form-input").css("color","#000000");
-                	}));
-                	
-                	 $("#EditProfilePage-F0orm-input").blur(function({
-                		 $(".EditProfilePage-Form-input").css("color","#848484");
-                	 }));
-                });
-                */
-               
-            </script>          
+           
     <style>
         body{ top:0;
             margin:0;align-self: auto;
@@ -57,10 +41,10 @@
             			</a>
             			<div class="header_column2">
                 			<a href="./loginPage" class="headerWhenNotLogin headerWhenNotLogin_first">
-                    			<div class="header-login">로그인</div>
+                    			<div class="header-login">Sign in</div>
                 			</a>
                 			<a href="./joinMemberPage" class="headerWhenNotLogin">
-                    			<div class="header-join">회원가입</div>
+                    			<div class="header-join">Sign up</div>
                 			</a>
             			</div>
         			</div>
@@ -79,19 +63,19 @@
                     		<a href="./myPage" class="headerWhenLogin headerWhenLogin_first">
                         		<c:choose>
                         			<c:when test="${memberSession.member_profile_photo == 'n' }">
-                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="MainImages/basicMemberProfile.jpg">
+                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="MainImages/basicMemberProfile.png">
                         			</c:when>
                         			<c:otherwise>
                         				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="${memberSession.member_profile_photo }">
                         			</c:otherwise>
                         		</c:choose> 
-                        		<div class="header-row header_mypageText">마이페이지</div>
+                        		<div class="header-row header_mypageText">My page</div>
                     		</a>
                     		<a href="./logoutAction" class="headerWhenLogin headerWhenLogin_second">
-                        		<div class="header-row">로그아웃</div>
+                        		<div class="header-row">Sign out</div>
                     		</a>
                     		<a href="./tourEnrollPage" class="headerWhenLogin headerWhenLogin_third">
-                        		<div class="header-row">투어게시</div>
+                        		<div class="header-row">Post my tour</div>
                     		</a>
                 		</div>
             		</div>
@@ -102,7 +86,7 @@
     
 	<main class="EditProfilePage-main">
     	<div class="EditProfilePage-main-top">
-      	  개인정보수정
+      	  Edit profile
     	</div>
     	<form action="./editProfileAction" method="post" class="EditProfilePage-Form" enctype="multipart/form-data">
 
@@ -130,7 +114,7 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">프로필사진변경</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Change profile picture</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -148,63 +132,63 @@
         </div>  -->    
 
         <div class="EditProfilePage-Form-column">
-            <div class="EditProfilePage-Form-text">아이디</div>
+            <div class="EditProfilePage-Form-text">ID</div>
             <!--readonly 변경불가 input 속성(읽기전용)-->
             <div class="EditProfilePage-Form-input readonly">${memberEditProfileInfo.member_id}</div>
             <input type="hidden" name="member_idx" value="${memberEditProfileInfo.member_idx}">
         </div>
         
         <div class="EditProfilePage-Form-column">
-            <div class="EditProfilePage-Form-text">이름</div>
+            <div class="EditProfilePage-Form-text">Name</div>
             <div class="EditProfilePage-Form-input readonly">${memberEditProfileInfo.member_name}</div>
         </div>
         
     <div class="EditProfilePage-Form-column">
-        <div class="EditProfilePage-Form-text">생년월일</div>
+        <div class="EditProfilePage-Form-text">Birthday</div>
         <div class="EditProfilePage-Form-input readonly">${memberEditProfileInfo.member_age}</div>
     </div>        
 
     <div class="EditProfilePage-Form-column">
-        <div class="EditProfilePage-Form-text">성별</div>
+        <div class="EditProfilePage-Form-text">Gender</div>
         <div class="EditProfilePage-Form-input readonly">${memberEditProfileInfo.member_gender}</div>
     </div>    
 
     <div class="EditProfilePage-Form-column">
     	<!-- nick 수정 -->
-        <div class="EditProfilePage-Form-text">닉네임</div>
+        <div class="EditProfilePage-Form-text">Nickname</div>
         <input class="EditProfilePage-Form-input" type="text" value="${memberEditProfileInfo.member_nick}" name="member_nick">
     </div>
     
     <div class="EditProfilePage-Form-column">
     	<!-- nick 수정 -->
-        <div class="EditProfilePage-Form-text">전화번호</div>
+        <div class="EditProfilePage-Form-text">Phone</div>
         <input class="EditProfilePage-Form-input" type="text" value="${memberEditProfileInfo.member_phone}" name="member_phone">
     </div>    
     
     <div class="EditProfilePage-Form-column">
-        <div class="EditProfilePage-Form-text">거주지역</div>
-        <select name="member_address" class="EditProfilePage-Form-select">거주지역
-                <option value="1">서울</option>
-                <option value="2">경기</option>
-                <option value="3">강원</option>
-                <option value="4">충청</option>
-                <option value="5">전라</option>
-                <option value="6">경상</option>
-                <option value="7">제주</option>
+        <div class="EditProfilePage-Form-text">Residence</div>
+        <select name="member_address" class="EditProfilePage-Form-select">Residence
+                <option value="1">Seoul</option>
+                <option value="2">Gyeonggi</option>
+                <option value="3">Gangwon</option>
+                <option value="4">Chungcheong</option>
+                <option value="5">Jeonla</option>
+                <option value="6">Geyongsang</option>
+                <option value="7">jeju</option>
             </select>
     </div>    
 
     <div class="EditProfilePage-Form-column">
-            <div class="EditProfilePage-Form-text">카톡아이디</div>
+            <div class="EditProfilePage-Form-text">Contact</div>
             <input class="EditProfilePage-Form-input" value="${memberEditProfileInfo.member_kakao}" type="text" name="member_kakao">
     </div>   
 
     <div class="EditProfilePage-Form-column">
-            <div class="EditProfilePage-Form-text">이메일</div>
+            <div class="EditProfilePage-Form-text">Email</div>
             <input class="EditProfilePage-Form-input" type="text" value="${memberEditProfileInfo.member_email}" name="member_email">
         </div>   
      
-        <button type="submit" class="EditProfilePage-Form-button" >회원정보 수정하기 </button>
+        <button type="submit" class="EditProfilePage-Form-button" >Edit profile </button>
     </form>
 </main>
 
