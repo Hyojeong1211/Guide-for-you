@@ -43,10 +43,10 @@
             			</a>
             			<div class="header_column2">
                 			<a href="./loginPage" class="headerWhenNotLogin headerWhenNotLogin_first login-blackLine_first ">
-                    			<div class="header-login blackText">로그인</div>
+                    			<div class="header-login blackText">Sign in</div>
                 			</a>
                 			<a href="./joinMemberPage" class="headerWhenNotLogin login-blackLine_second ">
-                    			<div class="header-join blackText">회원가입</div>
+                    			<div class="header-join blackText">Sign up</div>
                 			</a>
             			</div>
         			</div>
@@ -65,19 +65,19 @@
                         	<a href="./myPage" class="headerWhenLogin headerWhenLogin_first notLogin-blackLine_first">
                             	<c:choose>
                         			<c:when test="${memberSession.member_profile_photo == 'n' }">
-                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="MainImages/basicMemberProfile.jpg">
+                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="MainImages/basicMemberProfile.png">
                         			</c:when>
                         			<c:otherwise>
                         				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="${memberSession.member_profile_photo }">
                         			</c:otherwise>
                         		</c:choose> 
-                            	<div class="header-row blackText">마이페이지</div>
+                            	<div class="header-row blackText">My page</div>
                         	</a>
                         	<a href="./logoutAction" class="headerWhenLogin headerWhenLogin_second notLogin-blackLine_second">
-                            	<div class="header-row blackText">로그아웃</div>
+                            	<div class="header-row blackText">Sign out</div>
                         	</a>
                         	<a href="./tourEnrollPage" class="headerWhenLogin headerWhenLogin_third notLogin-blackLine_third">
-                            	<div class="header-row blackText">투어게시</div>
+                            	<div class="header-row blackText">Post my tour</div>
                         	</a>
                     	</div>
                 	</div>
@@ -87,13 +87,13 @@
 
     <section class="jinSunMiPage-main_header">
         <div class="jinSunMiPage-main_headerBox">
-            <div class="jinSunMiPage_main-top">"${mainJinsunmiPageMemberInfo.member_nick }" 님의 투어 한눈에 보기</div>
+            <div class="jinSunMiPage_main-top">See all "${mainJinsunmiPageMemberInfo.member_nick }"'s tour</div>
             <!--진선미 가이드 프로필-->
             <div class="jinsunmiPage_main-section1">
                 <a href="./credit_infoPage?member_idx=${mainJinsunmiPageMemberInfo.member_idx }"> 
                 	<c:choose>
                 		<c:when test="${mainJinsunmiPageMemberInfo.member_profile_photo == 'n' }">
-                			<img  class="jinsunmi_section1-memberPhoto" alt="#member_photo" src="MainImages/basicMemberProfile.jpg">
+                			<img  class="jinsunmi_section1-memberPhoto" alt="#member_photo" src="MainImages/basicMemberProfile.png">
                 		</c:when>
                 		<c:otherwise>
                     		<img  class="jinsunmi_section1-memberPhoto" alt="#member_photo" src="${mainJinsunmiPageMemberInfo.member_profile_photo }">
@@ -109,8 +109,8 @@
         <!--진선미 게시물 한번에 보기-->
         <section class="jinsunmiPage_main-section2">
             <div class="jinsunmi_section2-buttonBox">
-                <button class="jinsunmi-ContentBtn" onclick="openCity(event, 'ingContents')">현재 게시물</button>
-                <button class="jinsunmi-ContentBtn" onclick="openCity(event, 'edContents')">과거 게시물</button>
+                <button class="jinsunmi-ContentBtn" onclick="openCity(event, 'ingContents')">Current Post</button>
+                <button class="jinsunmi-ContentBtn" onclick="openCity(event, 'edContents')">Past post</button>
             </div>
 
           
@@ -118,10 +118,10 @@
                 <!-- member_idx의 현재 게시물 반복문 시작 --><!--해당 tour_idx 파라미터 넘겨주기-->
                 <c:forEach items="${mainJinsunmiPageTourInfo }" var="tourInfo">
                 	<c:if test="${tourInfo.tour_complete == 'n' }">
-                		<a href="#해당게시글로 이동">
+                		<a href="#move to post">
                     		<li class="jinsunmi-Content">
                         		<img  class="jinsunmi-Content_tourImg" src="https://i.pinimg.com/474x/06/95/5b/06955bb98bdad070b52f1ea3aa1fd200.jpg" alt="tour_photo">
-                        		<div class="jinsunmi-Content_tourTitle">${tourInfo.tour_intro }</div>
+                        		<div class="jinsunmi-Content_tourTitle">${tourInfo.tour_intro}</div>
                     		</li>
                 		</a>
                 	</c:if>
@@ -135,7 +135,7 @@
                 <a>
                     <li class="jinsunmi-Content">
                         <img  class="jinsunmi-Content_tourImg" src="https://t1.daumcdn.net/cfile/tistory/997D123C5C74DF5438" alt="tour_photo">
-                        <div class="jinsunmi-Content_tourTitle">#tourTitle서울먹방하실래예?</div>
+                        <div class="jinsunmi-Content_tourTitle">#tourTitle</div>
                     </li>
                 </a>
                 <a>
@@ -186,7 +186,7 @@
         </section>
     </main>
 
-    <div>-----------footer-----------</div>
+    
     
 
 </body>
