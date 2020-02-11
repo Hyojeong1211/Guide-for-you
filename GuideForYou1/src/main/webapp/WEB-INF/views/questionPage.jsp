@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<고객센터 글작성 페이지>
     <!DOCTYPE html>
     <html lang="en">
 
@@ -160,7 +159,7 @@
     </head>
 
     <body class="questionBoardPage_body">
-        <!-- 고객센터 질문 작성 페이지 -->
+    
 
         <c:choose>
         	<c:when test="${empty memberSession }">
@@ -174,10 +173,10 @@
             			</a>
             			<div class="header_column2">
                 			<a href="./loginPage" class="headerWhenNotLogin headerWhenNotLogin_first login-blackLine_first ">
-                    			<div class="header-login blackText">로그인</div>
+                    			<div class="header-login blackText">Sign in</div>
                 			</a>
                 			<a href="./joinMemberPage" class="headerWhenNotLogin login-blackLine_second ">
-                    			<div class="header-join blackText">회원가입</div>
+                    			<div class="header-join blackText">Sign up</div>
                 			</a>
             			</div>
         			</div>
@@ -196,19 +195,19 @@
                         	<a href="./myPage" class="headerWhenLogin headerWhenLogin_first notLogin-blackLine_first">
                             	<c:choose>
                         			<c:when test="${memberSession.member_profile_photo == 'n' }">
-                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="MainImages/basicMemberProfile.jpg">
+                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="MainImages/basicMemberProfile.png">
                         			</c:when>
                         			<c:otherwise>
                         				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="${memberSession.member_profile_photo }">
                         			</c:otherwise>
                         		</c:choose> 
-                            	<div class="header-row blackText">마이페이지</div>
+                            	<div class="header-row blackText">My page</div>
                         	</a>
                         	<a href="./logoutAction" class="headerWhenLogin headerWhenLogin_second notLogin-blackLine_second">
-                            	<div class="header-row blackText">로그아웃</div>
+                            	<div class="header-row blackText">Sign out</div>
                         	</a>
                         	<a href="./tourEnrollPage" class="headerWhenLogin headerWhenLogin_third notLogin-blackLine_third">
-                            	<div class="header-row blackText">투어게시</div>
+                            	<div class="header-row blackText">Post my tour</div>
                         	</a>
                     	</div>
                 	</div>
@@ -228,7 +227,7 @@
                         <input name="#" value="#" type="hidden">
                         <div class="questionBoardPage_main-form_inputBox">
 
-                            <div class="questionBoardPage_main-text">닉네임</div>
+                            <div class="questionBoardPage_main-text">Nickname</div>
                             <div class="questionBoardPage_main-input">
                                 <div id="member_nick"></div>
                                 <div id="member_nick"></div>
@@ -237,28 +236,27 @@
 
                         <div class="questionBoardPage_main-form_inputBox questionBoard_content">
                             <!--question_title-->
-                            <div class="questionBoard_content_text">제목</div>
-                            <textarea name="#" placeholder="제목" class="questionBoard_content-questionTitle"></textarea>
+                            <div class="questionBoard_content_text">title</div>
+                            <textarea name="#" placeholder="title" class="questionBoard_content-questionTitle"></textarea>
                         </div>
                         <div class="questionBoardPage_main-form_inputBox questionBoard_content">
                             <!--question_Content-->
-                            <div class="questionBoard_content_text">질문 내용</div>
-                            <textarea name="#" placeholder="50자 내외" class="questionBoard_content-questionContent"></textarea>
+                            <div class="questionBoard_content_text">Question</div>
+                            <textarea name="#"  class="questionBoard_content-questionContent"></textarea>
                         </div>
 
                         <!--투어 사진 넘겨주기-->
-                        <div class="questionBoardPage_main_photo-text">사진등록</div>
-                        <div class="questionBoardPage_main-photoBox">
-                            <div class="questionPhoto_input">---사진 등록하는것 집어넣기---</div>
-                            <div class="questionPhoto_alert">※ 사진은 최대 5장 업로드 가능합니다.</div>
+                      
+                            <div class="questionPhoto_input">We will reply as soon as possible by your Email</div>
+                      
                         </div>
                     </div>
-                    <button type="submit" class="questionBtn">질문하기</button>
+                    <button type="submit" class="questionBtn">Send!</button>
                 </div>
             </form>
         </main>
 
-        <div>--------footer--------</div>
+
 
 
     </body>
