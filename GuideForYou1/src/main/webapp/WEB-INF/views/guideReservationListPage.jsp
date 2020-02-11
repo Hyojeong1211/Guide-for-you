@@ -60,10 +60,10 @@
             			</a>
             			<div class="header_column2">
                 			<a href="./loginPage" class="headerWhenNotLogin headerWhenNotLogin_first login-blackLine_first ">
-                    			<div class="header-login blackText">로그인</div>
+                    			<div class="header-login blackText">Sign in</div>
                 			</a>
                 			<a href="./joinMemberPage" class="headerWhenNotLogin login-blackLine_second ">
-                    			<div class="header-join blackText">회원가입</div>
+                    			<div class="header-join blackText">Sign up</div>
                 			</a>
             			</div>
         			</div>
@@ -82,19 +82,19 @@
                         	<a href="./myPage" class="headerWhenLogin headerWhenLogin_first notLogin-blackLine_first">
                             	<c:choose>
                         			<c:when test="${memberSession.member_profile_photo == 'n' }">
-                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="MainImages/basicMemberProfile.jpg">
+                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="MainImages/basicMemberProfile.png">
                         			</c:when>
                         			<c:otherwise>
                         				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="${memberSession.member_profile_photo }">
                         			</c:otherwise>
                         		</c:choose> 
-                            	<div class="header-row blackText">마이페이지</div>
+                            	<div class="header-row blackText">My page</div>
                         	</a>
                         	<a href="./logoutAction" class="headerWhenLogin headerWhenLogin_second notLogin-blackLine_second">
-                            	<div class="header-row blackText">로그아웃</div>
+                            	<div class="header-row blackText">Sign out</div>
                         	</a>
                         	<a href="./tourEnrollPage" class="headerWhenLogin headerWhenLogin_third notLogin-blackLine_third">
-                            	<div class="header-row blackText">투어게시</div>
+                            	<div class="header-row blackText">Post my tour</div>
                         	</a>
                     	</div>
                 	</div>
@@ -106,27 +106,27 @@
            
 
             <main class="guideReservationList_main">
-                <div class="guideReservationList_main_title">내 투어 예약 관리</div>
+                <div class="guideReservationList_main_title">my tour reservation</div>
 
 
                 
                 <div class="discribe_title">
-                	<div class="guideReservationList_main_tablinks doingTour">진행중인 투어</div>
+                	<div class="guideReservationList_main_tablinks doingTour">Current Tour</div>
                 	<div class="task container-fluid guide_navigation ">
-                            <div class="guide_nav title guidelList_content col-4">제목</div>
+                            <div class="guide_nav title guidelList_content col-4">Title</div>
                             <div class="task_div"></div>
-                            <div class="guide_nav region guidelList_content col-2">투어지역</div>
+                            <div class="guide_nav region guidelList_content col-2">Tour Residence</div>
                             <div class="task_div"></div>
-                            <div class="guide_nav date guidelList_content col-2">투어날짜</div>
+                            <div class="guide_nav date guidelList_content col-2">Tour Date</div>
                             <div class="task_div"></div>
-                            <div class="guide_nav max_participate guidelList_content col-3">(신청인원/참여가능 인원)</div>
+                            <div class="guide_nav max_participate guidelList_content col-3">(Applicants/Max)</div>
                             
                    </div>
                 </div>
                 
                  
 
-                <!--미완료 투어-->
+                <!--Unfinished Tour-->
                 	   
                            
                            
@@ -146,7 +146,7 @@
                                 	</div>
                                 	<div class="task_div"></div>
                                 	<div class="max_participate guidelList_content col-2">(${gudieTourInfo.sumParticipate}/${gudieTourInfo.tourBasicVo.tour_max_number})</div>
-                                	<a href="./guideReservationPeaplePage?tour_idx=${gudieTourInfo.tourBasicVo.tour_idx}" class="n_guide_arrow col-2 watch_reservationList"><div>신청자 보기</div><i class="fas fa-chevron-right "></i></a>
+                                	<a href="./guideReservationPeaplePage?tour_idx=${gudieTourInfo.tourBasicVo.tour_idx}" class="n_guide_arrow col-2 watch_reservationList"><div>See Applicants</div><i class="fas fa-chevron-right "></i></a>
                             	</div>
                         	</c:if>
                         	
@@ -159,7 +159,7 @@
            
     
     
-            <footer class="common_footer">공통 footer ui를 넣을 겁니다</footer>
+          
         </div>
        
 
