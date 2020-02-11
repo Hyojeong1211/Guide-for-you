@@ -27,10 +27,10 @@
             			</a>
             			<div class="header_column2">
                 			<a href="./loginPage" class="headerWhenNotLogin headerWhenNotLogin_first login-blackLine_first ">
-                    			<div class="header-login blackText">로그인</div>
+                    			<div class="header-login blackText">Sign in</div>
                 			</a>
                 			<a href="./joinMemberPage" class="headerWhenNotLogin login-blackLine_second ">
-                    			<div class="header-join blackText">회원가입</div>
+                    			<div class="header-join blackText">Sign up</div>
                 			</a>
             			</div>
         			</div>
@@ -49,19 +49,19 @@
                         	<a href="./myPage" class="headerWhenLogin headerWhenLogin_first notLogin-blackLine_first">
                             	<c:choose>
                         			<c:when test="${memberSession.member_profile_photo == 'n' }">
-                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="MainImages/basicMemberProfile.jpg">
+                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="MainImages/basicMemberProfile.png">
                         			</c:when>
                         			<c:otherwise>
                         				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="${memberSession.member_profile_photo }">
                         			</c:otherwise>
                         		</c:choose> 
-                            	<div class="header-row blackText">마이페이지</div>
+                            	<div class="header-row blackText">My page</div>
                         	</a>
                         	<a href="./logoutAction" class="headerWhenLogin headerWhenLogin_second notLogin-blackLine_second">
-                            	<div class="header-row blackText">로그아웃</div>
+                            	<div class="header-row blackText">Sign out</div>
                         	</a>
                         	<a href="./tourEnrollPage" class="headerWhenLogin headerWhenLogin_third notLogin-blackLine_third">
-                            	<div class="header-row blackText">투어게시</div>
+                            	<div class="header-row blackText">Post my tour</div>
                         	</a>
                     	</div>
                 	</div>
@@ -77,7 +77,7 @@
                         <div class="mypage_main_profile_top_title">My Page</div> 
                         <a href="./checkPasswordPage" class="mypage_main_profile_top_icon">  <!-- 내정보 수정 페이지 로 이동  아무것도 넘기지 않았습니다 -->
                             <i class="fas fa-cog profile_bottom_icon"></i>
-                            <div class="mypageModify">내 정보 수정</div>
+                            <div class="mypageModify">Edit profile</div>
                         </a>
                     </div>
                 
@@ -108,32 +108,32 @@
         <div class="container myPage_wrapper">
             <section class="align-items-center mypage_main_sector ">
                 <div class="container mypage_main_sector_guide">
-                    <div class="d-flex justify-content-start mypage_main_sector_guide_header">가이드 섹터</div>
+                    <div class="d-flex justify-content-start mypage_main_sector_guide_header">Guide</div>
                     <div class=" mypage_main_sector_guide_body">
-                        <a href="./myBoardReadingPage"><div  class=" guide_body_content"><i class="fas fa-book-open myPageIcon"></i>내 게시글</div></a>
+                        <a href="./myBoardReadingPage"><div  class=" guide_body_content"><i class="fas fa-book-open myPageIcon"></i>My tour</div></a>
                         <div class="mypage_main_div"></div>
-                        <a href="./guideReservationListPage"><div class=" guide_body_booking_confirm"><i class="far fa-calendar-check myPageIcon"></i>내 투어 예약 관리</div></a>
+                        <a href="./guideReservationListPage"><div class=" guide_body_booking_confirm"><i class="far fa-calendar-check myPageIcon"></i>My tour reservation</div></a>
                         <div class="mypage_main_div"></div>
-                        <a href="./guideWriteReviewPage"><div class=" guide_body_write_review"><i class="fas fa-pencil-alt myPageIcon"></i>리뷰작성</div></a>
+                        <a href="./guideWriteReviewPage"><div class=" guide_body_write_review"><i class="fas fa-pencil-alt myPageIcon"></i>Write Review</div></a>
                         <div class="mypage_main_div"></div>
-                        <a href="#"><div class="guide_body_manage_review"><i class="fas fa-eraser myPageIcon"></i>리뷰 관리</div></a>
+                        <a href="#"><div class="guide_body_manage_review"><i class="fas fa-eraser myPageIcon"></i>See Reviews</div></a>
                     </div>
                 </div>
                 <div class="container mypage_main_sector_customer">
-                    <div class="d-flex justify-content-start mypage_main_sector_customer_header">게스트 섹터</div>
+                    <div class="d-flex justify-content-start mypage_main_sector_customer_header">Guest</div>
                     <div class="mypage_main_sector_customer_body ">
-                        <a href="./customerReservationListPage"><div class="customer_body_booking"><i class="fas fa-plane-departure myPageIcon"></i>예약 신청내역 </div></a>
+                        <a href="./customerReservationListPage"><div class="customer_body_booking"><i class="fas fa-plane-departure myPageIcon"></i>Reservations</div></a>
                         <div class="mypage_main_div"></div>
-                        <a href="./customerEvaluationCheckPage"><div class="customer_body_write_review"><i class="fas fa-pencil-alt myPageIcon"></i>리뷰 작성</div></a>
+                        <a href="./customerEvaluationCheckPage"><div class="customer_body_write_review"><i class="fas fa-pencil-alt myPageIcon"></i>Write Review</div></a>
                         <div class="mypage_main_div"></div>
-                        <a href="./customerEvaluationListPage"><div class="customer_body_manage_review"><i class="fas fa-eraser myPageIcon"></i>리뷰 관리</div></a> 
+                        <a href="./customerEvaluationListPage"><div class="customer_body_manage_review"><i class="fas fa-eraser myPageIcon"></i>See Reviews</div></a> 
                     </div>
                 </div>
             </section>
            </div>
         </main>
 
-        <footer class="mypage_footer">공통 footer ui를 넣을 겁니다</footer>
+    
     
     
     
