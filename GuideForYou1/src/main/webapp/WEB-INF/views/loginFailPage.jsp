@@ -49,10 +49,10 @@
             			</a>
             			<div class="header_column2">
                 			<a href="./loginPage" class="headerWhenNotLogin headerWhenNotLogin_first">
-                    			<div class="header-login">로그인</div>
+                    			<div class="header-login">Sign in</div>
                 			</a>
                 			<a href="./joinMemberPage" class="headerWhenNotLogin">
-                    			<div class="header-join">회원가입</div>
+                    			<div class="header-join">Sign out</div>
                 			</a>
             			</div>
         			</div>
@@ -71,19 +71,19 @@
                     		<a href="./myPage" class="headerWhenLogin headerWhenLogin_first">
                         		<c:choose>
                         			<c:when test="${memberSession.member_profile_photo == 'n' }">
-                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="MainImages/basicMemberProfile.jpg">
+                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="MainImages/basicMemberProfile.png">
                         			</c:when>
                         			<c:otherwise>
                         				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="${memberSession.member_profile_photo }">
                         			</c:otherwise>
                         		</c:choose> 
-                        		<div class="header-row header_mypageText">마이페이지</div>
+                        		<div class="header-row header_mypageText">My page</div>
                     		</a>
                     		<a href="./logoutAction" class="headerWhenLogin headerWhenLogin_second">
-                        		<div class="header-row">로그아웃</div>
+                        		<div class="header-row">Sign out</div>
                     		</a>
                     		<a href="./tourEnrollPage" class="headerWhenLogin headerWhenLogin_third">
-                        		<div class="header-row">투어게시</div>
+                        		<div class="header-row">Post my tour</div>
                     		</a>
                 		</div>
             		</div>
@@ -95,8 +95,6 @@
 		<div >Login Failed</div>
 		<a href="loginPage">Back to login Page</a>
 	</div>
-	
-	<!-- 비밀번호 찾기랑 아이디 찾기 넣기 -->
 
 </body>
 </html>
