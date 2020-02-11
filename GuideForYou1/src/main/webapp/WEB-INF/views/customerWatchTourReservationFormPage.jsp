@@ -132,7 +132,7 @@
                         <div class="tourReservationPage_main-form-customerInfo_column1">
                              Phone
                         </div>
-                        <!-- reservation_call 넘겨주기-->
+                        <!-- reservation_call -->
                         <div class="tourReservationPage_main-form-customerInfo_column2">
                         ${customerRData.reservationBasicVo.reservation_call }
                         </div>
@@ -141,7 +141,7 @@
                         <div class="tourReservationPage_main-form-customerInfo_column1">
                              Participants
                         </div>
-                        <!-- reservation_participate  넘겨주기-->
+                        <!-- reservation_participate  -->
                         <div class="tourReservationPage_main-form-customerInfo_column2">
                         	${customerRData.reservationBasicVo.reservation_participate }
                         </div>
@@ -150,7 +150,7 @@
                         <div class="tourReservationPage_main-form-customerInfo_column1">
                              wish
                         </div>
-                        <!-- reservation_wish 넘겨주기-->
+                        <!-- reservation_wish -->
                         <div class="tourReservationPage_main-form-customerInfo_column2">
                         	${customerRData.reservationBasicVo.reservation_wish }
                         </div>
