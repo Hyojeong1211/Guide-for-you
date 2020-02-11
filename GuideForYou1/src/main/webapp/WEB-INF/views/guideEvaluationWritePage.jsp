@@ -7,7 +7,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>가이드 리뷰 작성</title>
+        <title>Guide review</title>
 
         <link rel="stylesheet" href="${pageContext.request.contextPath}//myPage_css/myPageTotalCss.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -31,7 +31,7 @@
             
             function insertAlert(){
             
-            	alert("리뷰가 작성되었습니다");
+            	alert("Review have been written");
             };
 
 
@@ -53,10 +53,10 @@
             			</a>
             			<div class="header_column2">
                 			<a href="./loginPage" class="headerWhenNotLogin headerWhenNotLogin_first login-blackLine_first ">
-                    			<div class="header-login blackText">로그인</div>
+                    			<div class="header-login blackText">Sign in</div>
                 			</a>
                 			<a href="./joinMemberPage" class="headerWhenNotLogin login-blackLine_second ">
-                    			<div class="header-join blackText">회원가입</div>
+                    			<div class="header-join blackText">Sign up</div>
                 			</a>
             			</div>
         			</div>
@@ -75,19 +75,19 @@
                         	<a href="./myPage" class="headerWhenLogin headerWhenLogin_first notLogin-blackLine_first">
                             	<c:choose>
                         			<c:when test="${memberSession.member_profile_photo == 'n' }">
-                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="MainImages/basicMemberProfile.jpg">
+                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="MainImages/basicMemberProfile.png">
                         			</c:when>
                         			<c:otherwise>
                         				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="${memberSession.member_profile_photo }">
                         			</c:otherwise>
                         		</c:choose> 
-                            	<div class="header-row blackText">마이페이지</div>
+                            	<div class="header-row blackText">My page</div>
                         	</a>
                         	<a href="./logoutAction" class="headerWhenLogin headerWhenLogin_second notLogin-blackLine_second">
-                            	<div class="header-row blackText">로그아웃</div>
+                            	<div class="header-row blackText">Sign out</div>
                         	</a>
                         	<a href="./tourEnrollPage" class="headerWhenLogin headerWhenLogin_third notLogin-blackLine_third">
-                            	<div class="header-row blackText">투어게시</div>
+                            	<div class="header-row blackText">Post my tour</div>
                         	</a>
                     	</div>
                 	</div>
@@ -99,7 +99,7 @@
             
 
             <main class="customerEvaluationWrite_main">
-                <div class="customerEvaluationWrite_main_title">${guideMemberTour.memberBasicVo.member_nick} 고객님 리뷰 작성</div>
+                <div class="customerEvaluationWrite_main_title">Give review to${guideMemberTour.memberBasicVo.member_nick}</div>
 
 
                 <form action="guideEvaluationWriteActionPage" method="get">
@@ -107,7 +107,7 @@
                 	<input type="hidden" name="t_idx" value="${guideMemberTour.tourBasicVo.tour_idx}">
                     <div class="customerEvaluationWrite_form">
                         <div class="customerEvaluationWrite_form_score_inputBox">
-                            <div class="customerEvaluationWrite_form_text">고객 만족도</div>
+                            <div class="customerEvaluationWrite_form_text">Star point</div>
                             <div class="customerEvaluationWrite_form_star">
                                 <div id="star"></div>
                                 <div class="customerEvaluationWrite_form_star_value">
@@ -121,13 +121,13 @@
                             <div class="customerEvaluationWrite_form_text">리뷰</div>
                             <textarea id="customer_review" name="customer_review" placeholder="  100자 내외" class="customerEvaluationWrite_form_review"></textarea>
                         </div>
-                        <button type="submit" class="customerEvaluationWrite_Btn" onclick="insertAlert()">리뷰 저장</button>
+                        <button type="submit" class="customerEvaluationWrite_Btn" onclick="insertAlert()">Save review</button>
                     </div>
                 </form>
 
             </main>
 
-            <footer class="common_footer">공통 footer ui를 넣을 겁니다</footer>
+           
         </div>
        
 
