@@ -27,10 +27,10 @@
             			</a>
             			<div class="header_column2">
                 			<a href="./loginPage" class="headerWhenNotLogin headerWhenNotLogin_first login-blackLine_first ">
-                    			<div class="header-login blackText">로그인</div>
+                    			<div class="header-login blackText">Sign in</div>
                 			</a>
                 			<a href="./joinMemberPage" class="headerWhenNotLogin login-blackLine_second ">
-                    			<div class="header-join blackText">회원가입</div>
+                    			<div class="header-join blackText">Sign up</div>
                 			</a>
             			</div>
         			</div>
@@ -49,19 +49,19 @@
                         	<a href="./myPage" class="headerWhenLogin headerWhenLogin_first notLogin-blackLine_first">
                             	<c:choose>
                         			<c:when test="${memberSession.member_profile_photo == 'n' }">
-                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="MainImages/basicMemberProfile.jpg">
+                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="MainImages/basicMemberProfile.png">
                         			</c:when>
                         			<c:otherwise>
-                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="${memberSession.member_profile_photo }">
+                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="${memberSession.member_profile_photo}">
                         			</c:otherwise>
                         		</c:choose> 
-                            	<div class="header-row blackText">마이페이지</div>
+                            	<div class="header-row blackText">My page</div>
                         	</a>
                         	<a href="./logoutAction" class="headerWhenLogin headerWhenLogin_second notLogin-blackLine_second">
-                            	<div class="header-row blackText">로그아웃</div>
+                            	<div class="header-row blackText">Sign out</div>
                         	</a>
                         	<a href="./tourEnrollPage" class="headerWhenLogin headerWhenLogin_third notLogin-blackLine_third">
-                            	<div class="header-row blackText">투어게시</div>
+                            	<div class="header-row blackText">Post my tour</div>
                         	</a>
                     	</div>
                 	</div>
@@ -72,8 +72,8 @@
         <div class="container myPage_wrapper">
             
             <main class="guideReservationList_main">
-                <div class="guideReservationList_main_title">고객에게 리뷰주기</div>
-                <div class="guideWritereview_main_title "> 참가한 사람</div>
+                <div class="guideReservationList_main_title">Give reviews to Customers</div>
+                <div class="guideWritereview_main_title "> Participants</div>
                 
                 
                 <section id="guidelList_notcomp" class=" guideReservationList_notcomp board_tabcontent">
@@ -99,7 +99,7 @@
                             <div class="writeReview_column_name guidelList_content ">${RMTJoinData.memberBasicVo.member_nick}</div> 
                         </div> 
                         <div class="writeReview_column_div"></div>
-                        <a href="./guideEvaluationWritePage?tour_idx=${RMTJoinData.tourBasicVo.tour_idx}&member_idx=${RMTJoinData.memberBasicVo.member_idx}" class="n_guide_arrow ">고객리뷰작성<i class="fas fa-chevron-right "></i></a>
+                        <a href="./guideEvaluationWritePage?tour_idx=${RMTJoinData.tourBasicVo.tour_idx}&member_idx=${RMTJoinData.memberBasicVo.member_idx}" class="n_guide_arrow ">Give review to customer<i class="fas fa-chevron-right "></i></a>
                     </div>
                    
                    
@@ -107,7 +107,7 @@
                  
                 </section>
             </main>
-            <footer class="common_footer">공통 footer ui를 넣을 겁니다</footer>
+          
         </div>
 
 
