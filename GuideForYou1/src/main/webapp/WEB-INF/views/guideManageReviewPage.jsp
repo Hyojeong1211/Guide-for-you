@@ -51,7 +51,7 @@
 
         </script>
 
-    <title>가이드 리뷰 관리</title>
+    <title>Guide review control</title>
     
 </head>
 <body>
@@ -68,10 +68,10 @@
             			</a>
             			<div class="header_column2">
                 			<a href="./loginPage" class="headerWhenNotLogin headerWhenNotLogin_first login-blackLine_first ">
-                    			<div class="header-login blackText">로그인</div>
+                    			<div class="header-login blackText">Sign in</div>
                 			</a>
                 			<a href="./joinMemberPage" class="headerWhenNotLogin login-blackLine_second ">
-                    			<div class="header-join blackText">회원가입</div>
+                    			<div class="header-join blackText">Sign up</div>
                 			</a>
             			</div>
         			</div>
@@ -90,19 +90,19 @@
                         	<a href="./myPage" class="headerWhenLogin headerWhenLogin_first notLogin-blackLine_first">
                             	<c:choose>
                         			<c:when test="${memberSession.member_profile_photo == 'n' }">
-                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="MainImages/basicMemberProfile.jpg">
+                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="MainImages/basicMemberProfile.png">
                         			</c:when>
                         			<c:otherwise>
                         				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="${memberSession.member_profile_photo }">
                         			</c:otherwise>
                         		</c:choose> 
-                            	<div class="header-row blackText">마이페이지</div>
+                            	<div class="header-row blackText">My page</div>
                         	</a>
                         	<a href="./logoutAction" class="headerWhenLogin headerWhenLogin_second notLogin-blackLine_second">
-                            	<div class="header-row blackText">로그아웃</div>
+                            	<div class="header-row blackText">Sign out</div>
                         	</a>
                         	<a href="./tourEnrollPage" class="headerWhenLogin headerWhenLogin_third notLogin-blackLine_third">
-                            	<div class="header-row blackText">투어게시</div>
+                            	<div class="header-row blackText">Post my tour</div>
                         	</a>
                     	</div>
                 	</div>
@@ -114,14 +114,14 @@
            
 
             <main class="guideManageReview_main">
-                <div class="myBoardReading_main_header">가이드 리뷰 관리</div>
+                <div class="myBoardReading_main_header">Guide Review</div>
                 <div class="myBoardReading_main_tab">
-                    <button class="myBoardReading_main_tablinks" onclick="openBoard(event, 'guide_write_review')">내가 작성한 리뷰 </button>
+                    <button class="myBoardReading_main_tablinks" onclick="openBoard(event, 'guide_write_review')">Reviews I wrote</button>
                     <div class="tablinks_divide"></div>
-                    <button class="myBoardReading_main_tablinks" onclick="openBoard(event, 'guide_get_review')">내가 받은 리뷰</button>
+                    <button class="myBoardReading_main_tablinks" onclick="openBoard(event, 'guide_get_review')">Reviews I got</button>
                 </div>    
 
-                <!-- 내가 작성한 리뷰 부분 -->
+                <!-- Reviews I wrote -->
                 <ul id="guide_write_review" class="guideManageReview_main_write_review  board_tabcontent  ">
                   <c:forEach items="${guideMTCustomerInfo}" var="customer">
                 	<li class="guideManageReview_main_review_wrap menu">
@@ -137,14 +137,14 @@
                                 <div>${customer.tourBasicVo.tour_intro}</div> 
                                 <div class="guideManage_task_div "></div>
                                 <a href="./guideManageCustomerReviewPageAction?customer_idx=${customer.customer_EvaluationBasicVo.customer_idx }" class="review_delete">
-                                	<div class="review_delete_btn">리뷰 삭제하기</div>
+                                	<div class="review_delete_btn">Delete Review</div>
                                 </a> 
                             </div>
                           
                         </div>
                             <a class="review_flip">
                                 <i class="fas fa-sort-down"></i>
-                                <div class="watch_review">리뷰보기</div>
+                                <div class="watch_review">See review</div>
                             </a>
                         <ul  class="guideManageReview_main_review_bottom  review_panel hide" >
                             <li class="guideManageReview_main_review_bottom_column">
@@ -160,7 +160,7 @@
                     
                 </ul>
 
-                <!-- 내가 받은 리뷰 -->
+                <!-- REviews I got -->
                 <ul id="guide_get_review" class="guideManageReview_main_write_review  board_tabcontent  ">
                 
                 	<c:forEach items="${guideMTGuideInfo}" var="guide">
@@ -179,7 +179,7 @@
                             </div>
                                 <a  class="review_flip">
                                     <i class="fas fa-sort-down"></i>
-                                    <div class="watch_review">리뷰보기</div>
+                                    <div class="watch_review">See review</div>
                                 </a>
                             <ul  class="guideManageReview_main_review_bottom  review_panel hide" >
                                 <li class=" getreview_top_column_get_bottom">
@@ -198,7 +198,7 @@
                 
             </main>
 
-            <footer class="common_footer">공통 footer ui를 넣을 겁니다</footer>
+            
         </div>
 
 
