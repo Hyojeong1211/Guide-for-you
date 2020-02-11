@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>게스트섹터 고객 예약신청서 확인</title>
+    <title>Guest Reservation form check</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="${pageContext.request.contextPath}/myPage_css/myPageTotalCss.css">
@@ -27,7 +27,7 @@
 </head>
 <body class="tourReservationPage_body">
     
-    <!--투어예약신청보기 페이지-->
+    <!--Tour Resrvation form page-->
 
         <c:choose>
         	<c:when test="${empty memberSession }">
@@ -41,10 +41,10 @@
             			</a>
             			<div class="header_column2">
                 			<a href="./loginPage" class="headerWhenNotLogin headerWhenNotLogin_first">
-                    			<div class="header-login">로그인</div>
+                    			<div class="header-login">Sign in</div>
                 			</a>
                 			<a href="./joinMemberPage" class="headerWhenNotLogin">
-                    			<div class="header-join">회원가입</div>
+                    			<div class="header-join">Sign up</div>
                 			</a>
             			</div>
         			</div>
@@ -63,19 +63,19 @@
                     		<a href="./myPage" class="headerWhenLogin headerWhenLogin_first">
                         		<c:choose>
                         			<c:when test="${memberSession.member_profile_photo == 'n' }">
-                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="MainImages/basicMemberProfile.jpg">
+                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="MainImages/basicMemberProfile.png">
                         			</c:when>
                         			<c:otherwise>
                         				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="${memberSession.member_profile_photo }">
                         			</c:otherwise>
                         		</c:choose> 
-                        		<div class="header-row header_mypageText">마이페이지</div>
+                        		<div class="header-row header_mypageText">My page</div>
                     		</a>
                     		<a href="./logoutAction" class="headerWhenLogin headerWhenLogin_second">
-                        		<div class="header-row">로그아웃</div>
+                        		<div class="header-row">Sign out</div>
                     		</a>
                     		<a href="./tourEnrollPage" class="headerWhenLogin headerWhenLogin_third">
-                        		<div class="header-row">투어게시</div>
+                        		<div class="header-row">Post my tour</div>
                     		</a>
                 		</div>
             		</div>
@@ -85,10 +85,10 @@
 
         <main class="tourReservationPage_main">
             <div class="tourReservationPage_main-top">
-                내 예약신청서
+                My Reservation form
             </div>
             <div action="#" method="get" class="tourReservationPage_main-form">
-                <!--신청투어 요약--> 
+                <!--Tour summary--> 
                 <div class="tourReservationPage_form-tourSummary">
                     <div class="tourReservationPage_form-tourSummary_tourGuide">
                         <img alt="#member_photo"class="tourReservationPage_tourSummary-guidePhoto" src="http://kinimage.naver.net/20161216_196/1481870491951kYMeq_JPEG/Na1455870757504.jpg">
@@ -98,15 +98,15 @@
                         ${customerRData.tourBasicVo.tour_intro }
                     </div>
                     <div class="tourReservationPage_form-tourSummary_tourDate">
-                        <div class="tourReservationPage_form-tourSummary_tourDate-text">투어날짜</div>
+                        <div class="tourReservationPage_form-tourSummary_tourDate-text">Tour date</div>
                         <div class="tourReservationPage_form-tourSummary_tourDate-insert">${customerRData.tourBasicVo.tour_tourdate }</div>
                     </div>
                 </div>
-                 <!--신청투어 양식-->
+                 <!--Toure Reservation form-->
                 <div class="tourReservationPage_main-form-customerInfo">
                     <div class="tourReservationPage_main-form-customerInfo_row">
                         <div class="tourReservationPage_main-form-customerInfo_column1">
-                             신청자
+                             Name
                         </div>
                         <div class="tourReservationPage_main-form-customerInfo_column2">
                         	${customerRData.memberCVo.member_name }
@@ -114,7 +114,7 @@
                     </div>
                     <div class="tourReservationPage_main-form-customerInfo_row">
                         <div class="tourReservationPage_main-form-customerInfo_column1">
-                             나이
+                             Age
                         </div>
                         <div class="tourReservationPage_main-form-customerInfo_column2">
                             ${customerRData.memberCVo.member_age }
@@ -122,7 +122,7 @@
                     </div>
                     <div class="tourReservationPage_main-form-customerInfo_row">
                         <div class="tourReservationPage_main-form-customerInfo_column1">
-                             성별
+                             Gender
                         </div>
                         <div class="tourReservationPage_main-form-customerInfo_column2">
                        		${customerRData.memberCVo.member_gender }
@@ -130,7 +130,7 @@
                     </div>
                     <div class="tourReservationPage_main-form-customerInfo_row">
                         <div class="tourReservationPage_main-form-customerInfo_column1">
-                             연락처
+                             Phone
                         </div>
                         <!-- reservation_call 넘겨주기-->
                         <div class="tourReservationPage_main-form-customerInfo_column2">
@@ -139,7 +139,7 @@
                     </div>
                     <div class="tourReservationPage_main-form-customerInfo_row">
                         <div class="tourReservationPage_main-form-customerInfo_column1">
-                             참여인원수
+                             Participants
                         </div>
                         <!-- reservation_participate  넘겨주기-->
                         <div class="tourReservationPage_main-form-customerInfo_column2">
@@ -148,27 +148,27 @@
                     </div>
                     <div class="tourReservationPage_main-form-customerInfo_wish">
                         <div class="tourReservationPage_main-form-customerInfo_column1">
-                             바라는 점
+                             wish
                         </div>
                         <!-- reservation_wish 넘겨주기-->
                         <div class="tourReservationPage_main-form-customerInfo_column2">
                         	${customerRData.reservationBasicVo.reservation_wish }
                         </div>
                     </div>
-                     <!--예약상태--보류(b)로(reservation_confirm), 투어신청취소여부--(n)으로(reservation_tour_cancel) 넘겨주기 -->
+                     <!--Reservation staitment--comferming(b)로(reservation_confirm), --Tour canceled (n)(reservation_tour_cancel)  -->
                         <div class="tourReservationPage_confirm_btn">
                             <a href="./customerUpdateTourReservationFormPage?reservation_idx=${customerRData.reservationBasicVo.reservation_idx }">
-                                <div class="tourReservationPage_confirm_btn_column">수정</div>
+                                <div class="tourReservationPage_confirm_btn_column">Edit</div>
                             </a>
                             <a href="./cancelReservationAction?reservation_idx=${customerRData.reservationBasicVo.reservation_idx }">
-                                <div class="tourReservationPage_confirm_btn_column">삭제</div>
+                                <div class="tourReservationPage_confirm_btn_column">Delete</div>
                             </a>
                         </div>
                 </div>
             </div>
         </main>
 
-        <div>--------footer--------</div>
+    
 
 </body>
 </html>
