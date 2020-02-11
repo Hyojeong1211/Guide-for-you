@@ -40,10 +40,10 @@
             			</a>
             			<div class="header_column2">
                 			<a href="./loginPage" class="headerWhenNotLogin headerWhenNotLogin_first">
-                    			<div class="header-login">로그인</div>
+                    			<div class="header-login">Sign in</div>
                 			</a>
                 			<a href="./joinMemberPage" class="headerWhenNotLogin">
-                    			<div class="header-join">회원가입</div>
+                    			<div class="header-join">Sign up</div>
                 			</a>
             			</div>
         			</div>
@@ -62,19 +62,19 @@
                     		<a href="./myPage" class="headerWhenLogin headerWhenLogin_first">
                         		<c:choose>
                         			<c:when test="${memberSession.member_profile_photo == 'n' }">
-                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="MainImages/basicMemberProfile.jpg">
+                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="MainImages/basicMemberProfile.png">
                         			</c:when>
                         			<c:otherwise>
                         				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="${memberSession.member_profile_photo }">
                         			</c:otherwise>
                         		</c:choose> 
-                        		<div class="header-row header_mypageText">마이페이지</div>
+                        		<div class="header-row header_mypageText">my page</div>
                     		</a>
                     		<a href="./logoutAction" class="headerWhenLogin headerWhenLogin_second">
-                        		<div class="header-row">로그아웃</div>
+                        		<div class="header-row">Sign out</div>
                     		</a>
                     		<a href="./tourEnrollPage" class="headerWhenLogin headerWhenLogin_third">
-                        		<div class="header-row">투어게시</div>
+                        		<div class="header-row">Post my tour</div>
                     		</a>
                 		</div>
             		</div>
@@ -92,7 +92,7 @@
                      <div class="tourReservationPage_form-tourSummary_tourGuide">
                      	<c:choose>
                      		<c:when test="${mainTourDataForReservation.memberBasicVo.member_profile_photo == 'n' }">
-                     			<img alt="#member_photo"class="tourReservationPage_tourSummary-guidePhoto" src="MainImages/basicMemberProfile.jpg">
+                     			<img alt="#member_photo"class="tourReservationPage_tourSummary-guidePhoto" src="MainImages/basicMemberProfile.png">
                      		</c:when>
                      		<c:otherwise>
                         		<img alt="#member_photo"class="tourReservationPage_tourSummary-guidePhoto" src="${mainTourDataForReservation.memberBasicVo.member_profile_photo }">
@@ -104,7 +104,7 @@
                         ${mainTourDataForReservation.tourBasicVo.tour_intro }
                     </div>
                     <div class="tourReservationPage_form-tourSummary_tourDate">
-                        <div class="tourReservationPage_form-tourSummary_tourDate-text">투어날짜</div>
+                        <div class="tourReservationPage_form-tourSummary_tourDate-text">Tour date</div>
                         <div class="tourReservationPage_form-tourSummary_tourDate-insert">
                         	<fmt:parseDate var="tourDate" value="${mainTourDataForReservation.tourBasicVo.tour_tourdate }" pattern="yyyy-MM-dd"></fmt:parseDate> 
                         	<fmt:formatDate value="${tourDate}" pattern="yyyy-MM-dd"/>  
@@ -119,7 +119,7 @@
                          <!--투어신청자 member_idx넘겨주기-->
                          <input name="member_idx" type="hidden" value="${mainMemberDataForReservation.member_idx }">
                         <div class="tourReservationPage_main-form-customerInfo_column1">
-                             	신청자
+                             	Name
                         </div>
                         <div class="tourReservationPage_main-form-customerInfo_column2">
                              ${mainMemberDataForReservation.member_name }
@@ -127,7 +127,7 @@
                      </div>
                      <div class="tourReservationPage_main-form-customerInfo_row">
                         <div class="tourReservationPage_main-form-customerInfo_column1">
-                            	 나이
+                            	 Age
                         </div>
                         <div class="tourReservationPage_main-form-customerInfo_column2">
                              ${mainMemberDataForReservation.member_age }
@@ -135,7 +135,7 @@
                      </div>
                      <div class="tourReservationPage_main-form-customerInfo_row">
                         <div class="tourReservationPage_main-form-customerInfo_column1">
-                             	성별
+                             	Gender
                         </div>
                         <div class="tourReservationPage_main-form-customerInfo_column2">
                              ${mainMemberDataForReservation.member_gender }
@@ -143,21 +143,21 @@
                      </div>
                      <div class="tourReservationPage_main-form-customerInfo_row">
                         <div class="tourReservationPage_main-form-customerInfo_column1">
-                             	연락처
+                             Phone
                         </div>
                         <!-- reservation_call 넘겨주기-->
                         <input name="reservation_call" type="text" class="tourReservationPage_input" placeholder="전화번호 or 카톡아이디" required="required">
                      </div>
                      <div class="tourReservationPage_main-form-customerInfo_row">
-                        <div class="tourReservationPage_main-form-customerInfo_column1">
-                            	 참여인원수
+                        <div class="tourReservationPage_main-form-customerInfo_column1">   	 
+                       Participants
                         </div>
                         <!-- reservation_participate  넘겨주기-->
                         <input name="reservation_participate" type="number" class="tourReservationPage_input" placeholder="ex) 2" required="required"> 
                      </div>
                      <div class="tourReservationPage_main-form-customerInfo_wish">
                         <div class="tourReservationPage_main-form-customerInfo_column1">
-                             	바라는 점
+                             	Request
                         </div>
                         <!-- reservation_wish 넘겨주기-->
                         <textarea name="reservation_wish" class="tourReservationPage_textarea"></textarea>    
@@ -170,7 +170,6 @@
             </form>
         </main>
 
-        <div>--------footer--------</div>
 
 </body>
 </html>
