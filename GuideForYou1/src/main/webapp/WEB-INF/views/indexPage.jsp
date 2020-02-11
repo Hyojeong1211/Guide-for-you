@@ -16,7 +16,7 @@
             margin:0;
             padding:0;
             /* background: url("https://cdn.pixabay.com/photo/2018/03/06/03/56/cyclist-3202481_960_720.jpg") no-repeat center center fixed; */
-            background: url("https://cdn.pixabay.com/photo/2014/06/18/13/24/people-371230_960_720.jpg") no-repeat center center fixed;
+            background: url("https://cdn.pixabay.com/photo/2020/01/13/10/06/bridge-4762043_1280.jpg") no-repeat center center fixed;
             -webkit-background-size: cover; 
             -moz-background-size: cover;
             -o-background-size: cover;
@@ -41,10 +41,10 @@
                 		</a>
                 		<div class="header_column2">
                     		<a href="./loginPage" class="headerWhenNotLogin headerWhenNotLogin_first login-blackLine_first">
-                        		<div class="header-login blackText">로그인</div>
+                        		<div class="header-login blackText">Sign in</div>
                     		</a>
                     		<a href="./joinMemberPage" class="headerWhenNotLogin login-blackLine_second">
-                        		<div class="header-join blackText">회원가입</div>
+                        		<div class="header-join blackText">Sign up</div>
                     		</a>
                 		</div>
             		</div>
@@ -63,19 +63,19 @@
                         	<a href="./myPage" class="headerWhenLogin headerWhenLogin_first notLogin-blackLine_first">
                             	<c:choose>
                         			<c:when test="${memberSession.member_profile_photo == 'n' }">
-                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="MainImages/basicMemberProfile.jpg">
+                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="MainImages/basicMemberProfile.png">
                         			</c:when>
                         			<c:otherwise>
                         				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="${memberSession.member_profile_photo }">
                         			</c:otherwise>
                         		</c:choose> 
-                            	<div class="header-row blackText">마이페이지</div>
+                            	<div class="header-row blackText">My page</div>
                         	</a>
                         	<a href="./logoutAction" class="headerWhenLogin headerWhenLogin_second notLogin-blackLine_second">
-                            	<div class="header-row blackText">로그아웃</div>
+                            	<div class="header-row blackText">sign out</div>
                         	</a>
                         	<a href="./tourEnrollPage" class="headerWhenLogin headerWhenLogin_third notLogin-blackLine_third">
-                            	<div class="header-row blackText">투어게시</div>
+                            	<div class="header-row blackText">Post my tour</div>
                         	</a>
                     	</div>
                 	</div>
@@ -87,7 +87,8 @@
         <main class="indexPage_main">
             <!--메인문구-->
             <section class="indexPage_main-text">
-                " 익숙한 삶에서 벗어나 현지인들을 만나는 여행은, 생각의 근육을 단련하는 비법이다. "
+                “TRAVEL IS NEVER A MATTER OF MONEY BUT OF COURAGE”<br>
+                  PAULO COELHO 
             </section>
             <!--카테고리 영역-->
             <section class="indexPage_main-categoryBox">
@@ -95,37 +96,37 @@
                 <div class="indexPage_main-categoryBox_localBox">
                     <a href="./kindOfLocalPage?location_idx=1"><!--location_idx넘겨줄것!-->
                         <div class="indexPage-local_text">
-                            #서울  
+                            #Seoul
                         </div>
                     </a>
                     <a href="./kindOfLocalPage?location_idx=2"><!--local_idx넘겨줄것!-->
                         <div class="indexPage-local_text">
-                            #경기  
+                            #Gyeonggi
                         </div>
                     </a>
                     <a href="./kindOfLocalPage?location_idx=3"><!--local_idx넘겨줄것!-->
                         <div class="indexPage-local_text">
-                            #강원  
+                            #Gangwon 
                         </div>
                     </a>
                     <a href="./kindOfLocalPage?location_idx=4"><!--local_idx넘겨줄것!-->
                         <div class="indexPage-local_text">
-                            #충청  
+                            #Chungcheong
                         </div>
                     </a>
                     <a href="kindOfLocalPage?location_idx=5"><!--local_idx넘겨줄것!-->
                         <div class="indexPage-local_text">
-                            #전라  
+                            #Jeonla
                         </div>
                     </a>
                     <a href="./kindOfLocalPage?location_idx=6"><!--local_idx넘겨줄것!-->
                         <div class="indexPage-local_text">
-                            #경상  
+                            #Gyeongsang
                         </div>
                     </a>
                     <a href="./kindOfLocalPage?location_idx=7"><!--local_idx넘겨줄것!-->
                         <div class="indexPage-local_text">
-                            #제주  
+                            #jeju  
                         </div>
                     </a>
                 </div>
@@ -135,8 +136,7 @@
          <footer>
             <div class="footer_column1"></div>
             <div class="footer_column2">
-                <div class="footer-customerCenter">고객센터</div>
-                <div class="footer-community">커뮤니티</div>
+               <a href="./questionPage"><div class="footer-customerCenter">Q n A</div></a>
             </div>
         </footer> 
 
