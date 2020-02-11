@@ -44,10 +44,10 @@
             			</a>
             			<div class="header_column2">
                 			<a href="./loginPage" class="headerWhenNotLogin headerWhenNotLogin_first login-blackLine_first ">
-                    			<div class="header-login blackText">로그인</div>
+                    			<div class="header-login blackText">Sign in</div>
                 			</a>
                 			<a href="./joinMemberPage" class="headerWhenNotLogin login-blackLine_second ">
-                    			<div class="header-join blackText">회원가입</div>
+                    			<div class="header-join blackText">Sign up</div>
                 			</a>
             			</div>
         			</div>
@@ -66,19 +66,19 @@
                         	<a href="./myPage" class="headerWhenLogin headerWhenLogin_first notLogin-blackLine_first">
                             	<c:choose>
                         			<c:when test="${memberSession.member_profile_photo == 'n' }">
-                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="MainImages/basicMemberProfile.jpg">
+                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="MainImages/basicMemberProfile.png">
                         			</c:when>
                         			<c:otherwise>
                         				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="${memberSession.member_profile_photo }">
                         			</c:otherwise>
                         		</c:choose> 
-                            	<div class="header-row blackText">마이페이지</div>
+                            	<div class="header-row blackText">My page</div>
                         	</a>
                         	<a href="./logoutAction" class="headerWhenLogin headerWhenLogin_second notLogin-blackLine_second">
-                            	<div class="header-row blackText">로그아웃</div>
+                            	<div class="header-row blackText">Sign out</div>
                         	</a>
                         	<a href="./tourEnrollPage" class="headerWhenLogin headerWhenLogin_third notLogin-blackLine_third">
-                            	<div class="header-row blackText">투어게시</div>
+                            	<div class="header-row blackText">post my tour</div>
                         	</a>
                     	</div>
                 	</div>
@@ -91,11 +91,11 @@
         
         <main class="myBoardReading_main">
             <section class="myBoardReading_main_section">
-                <div class="myBoardReading_main_header">내 게시글</div>
+                <div class="myBoardReading_main_header">My tour</div>
                 <div class="myBoardReading_main_tab">
-                    <button class="myBoardReading_main_tablinks" onclick="openBoard(event, 'current_board')">현재 게시물</button>
+                    <button class="myBoardReading_main_tablinks" onclick="openBoard(event, 'current_board')">Current tour</button>
                     <div class="tablinks_divide"></div>
-                    <button class="myBoardReading_main_tablinks" onclick="openBoard(event, 'past_board')">과거 게시물</button>
+                    <button class="myBoardReading_main_tablinks" onclick="openBoard(event, 'past_board')">Past tour</button>
                 </div>
                 
                 
@@ -174,7 +174,7 @@
 
             </section>
         </main>
-        <footer class="common_footer">공통 footer ui를 넣을 겁니다</footer>
+    
     </div>
     
     <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
