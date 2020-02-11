@@ -59,10 +59,10 @@
             			</a>
             			<div class="header_column2">
                 			<a href="./loginPage" class="headerWhenNotLogin headerWhenNotLogin_first login-blackLine_first ">
-                    			<div class="header-login blackText">로그인</div>
+                    			<div class="header-login blackText">Sign in</div>
                 			</a>
                 			<a href="./joinMemberPage" class="headerWhenNotLogin login-blackLine_second ">
-                    			<div class="header-join blackText">회원가입</div>
+                    			<div class="header-join blackText">Sign up</div>
                 			</a>
             			</div>
         			</div>
@@ -81,19 +81,19 @@
                         	<a href="./myPage" class="headerWhenLogin headerWhenLogin_first notLogin-blackLine_first">
                             	<c:choose>
                         			<c:when test="${memberSession.member_profile_photo == 'n' }">
-                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="MainImages/basicMemberProfile.jpg">
+                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="MainImages/basicMemberProfile.png">
                         			</c:when>
                         			<c:otherwise>
                         				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="${memberSession.member_profile_photo }">
                         			</c:otherwise>
                         		</c:choose> 
-                            	<div class="header-row blackText">마이페이지</div>
+                            	<div class="header-row blackText">My page</div>
                         	</a>
                         	<a href="./logoutAction" class="headerWhenLogin headerWhenLogin_second notLogin-blackLine_second">
-                            	<div class="header-row blackText">로그아웃</div>
+                            	<div class="header-row blackText">Sign out</div>
                         	</a>
                         	<a href="./tourEnrollPage" class="headerWhenLogin headerWhenLogin_third notLogin-blackLine_third">
-                            	<div class="header-row blackText">투어게시</div>
+                            	<div class="header-row blackText">Post my tour</div>
                         	</a>
                     	</div>
                 	</div>
@@ -105,23 +105,23 @@
             
         
             <main class="guideReservationPeaple_main">
-                    <div class="guideReservationList_main_title">투어신청자 확인</div>
+                    <div class="guideReservationList_main_title">Tour Reservations</div>
     
     				  <div class="discribe_title">
                     		<div class="guideReservationList_main_tab">
-                        		<button class="guideReservationList_main_tablinks" onclick="openBoard(event, 'guide_party_b')">신청자</button>
+                        		<button class="guideReservationList_main_tablinks" onclick="openBoard(event, 'guide_party_b')">Reservations</button>
                         		<div class="guideReservationList_main_div"></div>
-                        		<button class="guideReservationList_main_tablinks" onclick="openBoard(event, 'guide_party_y')">확정자</button>
+                        		<button class="guideReservationList_main_tablinks" onclick="openBoard(event, 'guide_party_y')">Confirmed</button>
                         		<div class="guideReservationList_main_div"></div>
-                        		<button class="guideReservationList_main_tablinks" onclick="openBoard(event, 'guide_party_n')">거절자</button>
+                        		<button class="guideReservationList_main_tablinks" onclick="openBoard(event, 'guide_party_n')">Canceled</button>
                     		</div>
                     		<div class="task container-fluid guide_navigation ">
                     			<div class="guide_nav title guidelList_content col-2"></div>
-                            	<div class="guide_nav title guidelList_content col-3">참여자</div>
+                            	<div class="guide_nav title guidelList_content col-3">Name</div>
                             	<div class="task_div"></div>
-                            	<div class="guide_nav region guidelList_content col-3"> 평점</div>
+                            	<div class="guide_nav region guidelList_content col-3"> Star point</div>
                             	<div class="task_div"></div>
-                            	<div class="guide_nav date guidelList_content col-3">신청 인원수</div>
+                            	<div class="guide_nav date guidelList_content col-3">Applicants</div>
                             	<div class="guide_nav title guidelList_content col-1"></div>
                   			</div>
                     
@@ -131,7 +131,7 @@
                 
               
                     
-                   	 <!--신청 보류자 리스트-->
+                   	 <!--Reeservations list-->
                     	
                     <section id="guide_party_b" class=" guideReservationList_notcomp board_tabcontent">
                       <c:forEach items="${guideRCE}" var="rce">
@@ -173,7 +173,7 @@
                    </section>
                    
                     
-                     <!--신청 확정 리스트-->
+                     <!--confirmed list-->
                     
                    <section id="guide_party_y" class="guideReservationList_comp board_tabcontent">
                       <c:forEach items="${guideRCE}" var="rce">
@@ -216,7 +216,7 @@
                     </section>
                     
                     
-                      <!--신청 거절 리스트-->
+                      <!--Canceled list-->
                     
                     <section id="guide_party_n" class="guideReservationList_comp board_tabcontent">
                       <c:forEach items="${guideRCE}" var="rce">
@@ -264,7 +264,7 @@
                
         
         
-                <footer class="common_footer">공통 footer ui를 넣을 겁니다</footer>
+           
 
                 <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
