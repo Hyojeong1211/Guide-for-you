@@ -19,7 +19,7 @@
     </style>
 </head>
 <body>
-    <!-- 지역별 페이지 -->
+    <!-- Local page -->
 
     <c:choose>
         	<c:when test="${empty memberSession }">
@@ -33,10 +33,10 @@
             			</a>
             			<div class="header_column2">
                 			<a href="./loginPage" class="headerWhenNotLogin headerWhenNotLogin_first login-blackLine_first ">
-                    			<div class="header-login blackText">로그인</div>
+                    			<div class="header-login blackText">Sign in</div>
                 			</a>
                 			<a href="./joinMemberPage" class="headerWhenNotLogin login-blackLine_second ">
-                    			<div class="header-join blackText">회원가입</div>
+                    			<div class="header-join blackText">Sign up</div>
                 			</a>
             			</div>
         			</div>
@@ -55,19 +55,19 @@
                         	<a href="./myPage" class="headerWhenLogin headerWhenLogin_first notLogin-blackLine_first">
                             	<c:choose>
                         			<c:when test="${memberSession.member_profile_photo == 'n' }">
-                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="MainImages/basicMemberProfile.jpg">
+                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="MainImages/basicMemberProfile.png">
                         			</c:when>
                         			<c:otherwise>
-                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="${memberSession.member_profile_photo }">
+                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="${memberSession.member_profile_photo}">
                         			</c:otherwise>
                         		</c:choose> 
-                            	<div class="header-row blackText">마이페이지</div>
+                            	<div class="header-row blackText">My page</div>
                         	</a>
                         	<a href="./logoutAction" class="headerWhenLogin headerWhenLogin_second notLogin-blackLine_second">
-                            	<div class="header-row blackText">로그아웃</div>
+                            	<div class="header-row blackText">Sgin out</div>
                         	</a>
                         	<a href="./tourEnrollPage" class="headerWhenLogin headerWhenLogin_third notLogin-blackLine_third">
-                            	<div class="header-row blackText">투어게시</div>
+                            	<div class="header-row blackText">Post my tour</div>
                         	</a>
                     	</div>
                 	</div>
@@ -81,12 +81,12 @@
         <section class="kindOfLocalPage_section1">
             <div class="kindOfLocalPage_section1-bestGuide">
                 <div class="kindOfLocalPage_section1-bestGuide-titleText">
-                   	 이 달의 가이드천왕을 소개합니다!
+                 This month's Top three Guides
                 </div>
                 <div class="kindOfLocalPage_section1-bestGuide-jinsunmi">
                 	
                 <c:if test="${mainJinsunmiInfoList[0] == null }">
-                	공석으로 인해 당신이 가이드천왕이 될 수 있게 되었습니다.
+                	You can be the Top gudie too!
                 </c:if>
                 
                  <c:if test="${fn:length(mainJinsunmiInfoList) == 1 && mainJinsunmiInfoList[0] != null}">
@@ -145,11 +145,11 @@
                             <div class="jinsunmi-profile_AVGscore">
                                 <img class="jinsunmi-profile_AVGscore-startImg" src="MainImages/star.png" alt="score_star">
                                 <div class="jinsunmi-profile_AVGscore-scoreText">
-                                    ${mainJinsunmiInfoList[0].tourAvgScore }/5점
+                                    ${mainJinsunmiInfoList[0].tourAvgScore }/5
                                 </div>
                             </div>
                             <a href="./jinSunMiPage?member_idx=${mainJinsunmiInfoList[0].memberBasicVo.member_idx }">
-                                <div class="jinsunmi-profile_lookingTour">투어보기</div>
+                                <div class="jinsunmi-profile_lookingTour">see Tour</div>
                             </a>
                         </div>
                     </div>
@@ -174,11 +174,11 @@
                             <div class="jinsunmi-profile_AVGscore">
                                 <img class="jinsunmi-profile_AVGscore-startImg" src="MainImages/star.png" alt="score_star">
                                 <div class="jinsunmi-profile_AVGscore-scoreText">
-                                    ${mainJinsunmiInfoList[1].tourAvgScore }/5점
+                                    ${mainJinsunmiInfoList[1].tourAvgScore }/5
                                 </div>
                             </div>
                             <a href="./jinSunMiPage?member_idx=${mainJinsunmiInfoList[1].memberBasicVo.member_idx }">
-                                <div class="jinsunmi-profile_lookingTour">투어보기</div>
+                                <div class="jinsunmi-profile_lookingTour">See tour</div>
                             </a>
                         </div>
                     </div>
@@ -206,11 +206,11 @@
                             <div class="jinsunmi-profile_AVGscore">
                                 <img class="jinsunmi-profile_AVGscore-startImg" src="MainImages/star.png" alt="score_star">
                                 <div class="jinsunmi-profile_AVGscore-scoreText">
-                                    ${mainJinsunmiInfoList[1].tourAvgScore }/5점
+                                    ${mainJinsunmiInfoList[1].tourAvgScore }/5
                                 </div>
                             </div>
                             <a href="./jinSunMiPage?member_idx=${mainJinsunmiInfoList[1].memberBasicVo.member_idx }">
-                                <div class="jinsunmi-profile_lookingTour">투어보기</div>
+                                <div class="jinsunmi-profile_lookingTour">See tour</div>
                             </a>
                         </div>
                     </div>
@@ -236,11 +236,11 @@
                             <div class="jinsunmi-profile_AVGscore">
                                 <img class="jinsunmi-profile_AVGscore-startImg" src="MainImages/star.png" alt="score_star">
                                 <div class="jinsunmi-profile_AVGscore-scoreText">
-                                    ${mainJinsunmiInfoList[0].tourAvgScore }/5점
+                                    ${mainJinsunmiInfoList[0].tourAvgScore }/5
                                 </div>
                             </div>
                             <a href="./jinSunMiPage?member_idx=${mainJinsunmiInfoList[0].memberBasicVo.member_idx }">
-                                <div class="jinsunmi-profile_lookingTour">투어보기</div>
+                                <div class="jinsunmi-profile_lookingTour">See tour</div>
                             </a>
                         </div>
                     </div>
@@ -265,11 +265,11 @@
                             <div class="jinsunmi-profile_AVGscore">
                                 <img class="jinsunmi-profile_AVGscore-startImg" src="MainImages/star.png" alt="score_star">
                                 <div class="jinsunmi-profile_AVGscore-scoreText">
-                                    ${mainJinsunmiInfoList[2].tourAvgScore }/5점
+                                    ${mainJinsunmiInfoList[2].tourAvgScore }/5
                                 </div>
                             </div>
                             <a href="./jinSunMiPage?member_idx=${mainJinsunmiInfoList[2].memberBasicVo.member_idx }">
-                                <div class="jinsunmi-profile_lookingTour">투어보기</div>
+                                <div class="jinsunmi-profile_lookingTour">See tour</div>
                             </a>
                         </div>
                     </div>
@@ -279,25 +279,25 @@
              <!-- 지역 nav -->
             <nav class="kindOfLocalPage_nav">
                 <a href="./kindOfLocalPage?location_idx=1">
-                   	 서울
+                   	 Seoul
                 </a>
                 <a href="./kindOfLocalPage?location_idx=2">
-                  	 경기
+                  	 Gyeonggi
                 </a>
                 <a href="./kindOfLocalPage?location_idx=3">
-                                         강원
+                                         Gangwon
                 </a>
                 <a href="./kindOfLocalPage?location_idx=4">
-                                         충청
+                  Chungcheong                       
                 </a>
                 <a href="./kindOfLocalPage?location_idx=5">
-                                         전라
+                                         Jeonla
                 </a>
                 <a href="./kindOfLocalPage?location_idx=6">
-                                         경상
+                                         Geyongsang
                 </a>
                 <a href="./kindOfLocalPage?location_idx=7">
-                                        제주
+                                        Jeju
                 </a>
             </nav>
         </section>
@@ -309,25 +309,25 @@
     <main class="kindOfLocalPage_main2">
         <div class="kindOfLocalPage_main2-top">
         	<c:if test="${mainKindOfLocalPageLocation_name.location_idx == 1 }">
-        		#서울
+        		#Seoul
         	</c:if>
         	<c:if test="${mainKindOfLocalPageLocation_name.location_idx == 2 }">
-        		#경기
+        		# Gyeonggi
         	</c:if>
         	<c:if test="${mainKindOfLocalPageLocation_name.location_idx == 3 }">
-        		#강원
+        		#  Gangwon
         	</c:if>
         	<c:if test="${mainKindOfLocalPageLocation_name.location_idx == 4 }">
-        		#충청
+        		#Chungcheong
         	</c:if>
         	<c:if test="${mainKindOfLocalPageLocation_name.location_idx == 5 }">
-        		#전라	
+        		#Jeonla
         	</c:if>
         	<c:if test="${mainKindOfLocalPageLocation_name.location_idx == 6 }">
-        		#경상
+        		#Gyeongsang
         	</c:if>
         	<c:if test="${mainKindOfLocalPageLocation_name.location_idx == 7 }">
-        		#제주
+        		#Jeju
         	</c:if>
         </div>
         
@@ -339,17 +339,17 @@
                     	<li class="LocalPage_section2-guideContent">
                     		<c:choose>
                     			<c:when test="${localContentList.tourBasicVo.tour_photo1 == null }">
-                        			<img class="LocalPage_section2-guideTourPhoto" src="https://post-phinf.pstatic.net/MjAxODAxMjZfMTYg/MDAxNTE2OTUwMTA3NzU1.vBit51uENBRF-qDqE71hNoH51C4noBi_bswXoWbObBsg.MLr_3StniQoh9wrvhTiymYTdjWwHO2pF0vxM2ApcPb0g.JPEG/iphone-wallpaper04.jpg?type=w1200" alt="기본투어사진">
+                        			<img class="LocalPage_section2-guideTourPhoto" src="https://post-phinf.pstatic.net/MjAxODAxMjZfMTYg/MDAxNTE2OTUwMTA3NzU1.vBit51uENBRF-qDqE71hNoH51C4noBi_bswXoWbObBsg.MLr_3StniQoh9wrvhTiymYTdjWwHO2pF0vxM2ApcPb0g.JPEG/iphone-wallpaper04.jpg?type=w1200" alt="basic tour picture">
                         		</c:when>
                         		<c:otherwise>
-                        			<img class="LocalPage_section2-guideTourPhoto" src="${localContentList.tourBasicVo.tour_photo1 }" alt="대표투어사진">
+                        			<img class="LocalPage_section2-guideTourPhoto" src="${localContentList.tourBasicVo.tour_photo1 }" alt="Tour picture">
                         		</c:otherwise>
                         	</c:choose>
                         	<div class="LocalPage_section2-guideTourTitle">${localContentList.tourBasicVo.tour_intro }</div>
                         	<div class="LocalPage_section2-guideProfile">
                         		<c:choose>
                         			<c:when test="${localContentList.memberBasicVo.member_profile_photo == 'n' }">
-                        				<img class="LocalPage_section2-guideProfile_memberPhoto" alt="#member_photo" src="MainImages/basicMemberProfile.jpg" >
+                        				<img class="LocalPage_section2-guideProfile_memberPhoto" alt="#member_photo" src="MainImages/basicMemberProfile.png" >
                         			</c:when>
                         			<c:otherwise>
                         				<img class="LocalPage_section2-guideProfile_memberPhoto" alt="#member_photo" src="${localContentList.memberBasicVo.member_profile_photo }" >
@@ -360,7 +360,7 @@
                         	<div class="LocalPage_section2-guideAVGscore">
                             	<img class="LocalPage_section2-guideAVGscore_starImg" src="MainImages/star.png">
                             	<div class="LocalPage_section2-guideAVGscore_scoreText">
-                                	${localContentList.guideAvgScore }/5점
+                                	${localContentList.guideAvgScore }/5
                             	</div>
                         	</div>   
                     	</li>
@@ -370,7 +370,7 @@
         </ul>
     </main>
 
-    <div>-----------footer-----------</div>
+  
 
     <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
 </body>
