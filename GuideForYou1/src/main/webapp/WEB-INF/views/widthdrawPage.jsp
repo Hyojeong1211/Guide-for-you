@@ -39,10 +39,10 @@
             			</a>
             			<div class="header_column2">
                 			<a href="./loginPage" class="headerWhenNotLogin headerWhenNotLogin_first">
-                    			<div class="header-login">로그인</div>
+                    			<div class="header-login">Sign in</div>
                 			</a>
                 			<a href="./joinMemberPage" class="headerWhenNotLogin">
-                    			<div class="header-join">회원가입</div>
+                    			<div class="header-join">Sign up</div>
                 			</a>
             			</div>
         			</div>
@@ -61,19 +61,19 @@
                     		<a href="./myPage" class="headerWhenLogin headerWhenLogin_first">
                         		<c:choose>
                         			<c:when test="${memberSession.member_profile_photo == 'n' }">
-                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="MainImages/basicMemberProfile.jpg">
+                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="MainImages/basicMemberProfile.png">
                         			</c:when>
                         			<c:otherwise>
                         				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="${memberSession.member_profile_photo }">
                         			</c:otherwise>
                         		</c:choose> 
-                        		<div class="header-row header_mypageText">마이페이지</div>
+                        		<div class="header-row header_mypageText">My page</div>
                     		</a>
                     		<a href="./logoutAction" class="headerWhenLogin headerWhenLogin_second">
-                        		<div class="header-row">로그아웃</div>
+                        		<div class="header-row">Sign out</div>
                     		</a>
                     		<a href="./tourEnrollPage" class="headerWhenLogin headerWhenLogin_third">
-                        		<div class="header-row">투어게시</div>
+                        		<div class="header-row">Post my tour</div>
                     		</a>
                 		</div>
             		</div>
@@ -83,22 +83,22 @@
 
     <main class="withdrawPage_main">
         <div class="withdrawPage-main-top">
-            회원탈퇴
+            Delete Account 
         </div>    
         
         <div class="withdrawForm">
             <div class="withdrawPage-main-top-text">
-                유의사항을 확인하시고 탈퇴 신청을 해주세요 
+ Please check the instructions and apply for withdrawal
              </div>
             <div class="withdrawtextbox">
-                    회원탈퇴를 하시면 아이디로 가입된 모든 서비스를 사용하실 수 없습니다.<br>
-                    또한 아이디로 서비스를 가입/사용 하시면서 축적된 정보 및 기록은
-                    탈퇴일 기준으로 두달 후정상 삭제됩니다. 
+                 If you cancel your membership, you will not be able to use any of the services registered with your ID. <br>
+                    In addition, the information and records accumulated while joining / using the service as an ID are
+                    It will be deleted after two months from the date of withdrawal.
             </div>
             <form class="withdrawbuttons" action="/withdrawAction" method="get">
-                <a href="./indexPage"><div class="withdrawButton_cancel">취소하기</div></a>
+                <a href="./indexPage"><div class="withdrawButton_cancel">Cancel</div></a>
                 <!-- sessionIdx랑 member_quit, member_quitDate 파라미터로 넘어감-->
-                <a href="./withdrawAction"><div class="withdrawButton_confirm">탈퇴하기</div></a>
+                <a href="./withdrawAction"><div class="withdrawButton_confirm">Delete Account</div></a>
             </form>
 
 
@@ -109,11 +109,8 @@
 
 
     </main>    
-    <footer>
-        푸터입니다.
-    </footer>    
+    
     
 </div>
 </body>
-</html>         
-<!--메인은 무조건 600px 안에 폼은 80%-->
+</html>   
