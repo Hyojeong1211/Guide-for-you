@@ -12,7 +12,7 @@
         <link href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
         
-        <title>가이드에게 리뷰주기</title>
+        <title>Give reviews to guied</title>
     </head>
     <body>
     
@@ -106,7 +106,7 @@
                     
                 </section>
             </main>
-            <footer class="common_footer">공통 footer ui를 넣을 겁니다</footer>
+          
         </div>
 
 
