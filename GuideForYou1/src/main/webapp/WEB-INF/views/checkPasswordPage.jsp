@@ -138,9 +138,7 @@
 
              </form>    
          </main>   
-        <footer>
-           
-        </footer> 
+       
 
 </body>
 </html>         
