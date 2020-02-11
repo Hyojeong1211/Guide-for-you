@@ -28,10 +28,10 @@
             			</a>
             			<div class="header_column2">
                 			<a href="./loginPage" class="headerWhenNotLogin headerWhenNotLogin_first login-blackLine_first ">
-                    			<div class="header-login blackText">로그인</div>
+                    			<div class="header-login blackText">Sign in</div>
                 			</a>
                 			<a href="./joinMemberPage" class="headerWhenNotLogin login-blackLine_second ">
-                    			<div class="header-join blackText">회원가입</div>
+                    			<div class="header-join blackText">Sign up</div>
                 			</a>
             			</div>
         			</div>
@@ -50,19 +50,19 @@
                         	<a href="./myPage" class="headerWhenLogin headerWhenLogin_first notLogin-blackLine_first">
                             	<c:choose>
                         			<c:when test="${memberSession.member_profile_photo == 'n' }">
-                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="MainImages/basicMemberProfile.jpg">
+                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="MainImages/basicMemberProfile.png">
                         			</c:when>
                         			<c:otherwise>
                         				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="${memberSession.member_profile_photo }">
                         			</c:otherwise>
                         		</c:choose> 
-                            	<div class="header-row blackText">마이페이지</div>
+                            	<div class="header-row blackText">My page</div>
                         	</a>
                         	<a href="./logoutAction" class="headerWhenLogin headerWhenLogin_second notLogin-blackLine_second">
-                            	<div class="header-row blackText">로그아웃</div>
+                            	<div class="header-row blackText">Sign out</div>
                         	</a>
                         	<a href="./tourEnrollPage" class="headerWhenLogin headerWhenLogin_third notLogin-blackLine_third">
-                            	<div class="header-row blackText">투어게시</div>
+                            	<div class="header-row blackText">Post my tour</div>
                         	</a>
                     	</div>
                 	</div>
@@ -94,7 +94,7 @@
                         <img alt="#member_photo" src="http://kinimage.naver.net/20161216_196/1481870491951kYMeq_JPEG/Na1455870757504.jpg">
                         <div class="tourGuideContentPage_section1-memberNick">${mainTourContentData.memberBasicVo.member_nick }</div>
                         <div class="tourGuideContentPage_main2-section1_lookReview">
-                                                        리뷰/평점 보기
+                                                        See Reviews/Start point
                         </div>
                     </div>
                 </a>
@@ -105,39 +105,39 @@
             </section>
             <!-- 가이드 게시글--가이드정보-->
             <section class="tourGuideContentPage_main2-row">
-                <div class="tourGuideContentPage_main2-row_text">가이드정보</div>
+                <div class="tourGuideContentPage_main2-row_text">Guide's information</div>
                 <div class="tourGuideContentPage_main2-row_Box">
                     <div class="tourGuideContentPage_main2-column tourGuideContentPage_guideInfo">
                         <div class="tourGuideContentPage_main2-column_title">
-                            	거주지역:
+                            	Residence:
                         </div>
                         <div class="tourGuideContentPage_main2-column_insert">
                         <c:if test="${mainTourContentData.memberBasicVo.member_address == 1}">
-                        	서울
+                        	Seoul
                         </c:if>
                         <c:if test="${mainTourContentData.memberBasicVo.member_address == 2}">
-                        	경기
+                        	Gyeonggi
                         </c:if>
                         <c:if test="${mainTourContentData.memberBasicVo.member_address == 3}">
-                        	강원
+                        	Gangwon
                         </c:if>
                         <c:if test="${mainTourContentData.memberBasicVo.member_address == 4}">
-                        	충청
+                        	Chungcheong
                         </c:if>
                         <c:if test="${mainTourContentData.memberBasicVo.member_address == 5}">
-                        	전라
+                        	Jeonla
                         </c:if>
                         <c:if test="${mainTourContentData.memberBasicVo.member_address == 6}">
-                        	경상
+                        	Gyeongsang
                         </c:if>
                         <c:if test="${mainTourContentData.memberBasicVo.member_address == 7}">
-                        	제주
+                        	Jeju
                         </c:if>
                         </div>
                     </div>
                     <div class="tourGuideContentPage_main2-column tourGuideContentPage_guideInfo">
                         <div class="tourGuideContentPage_main2-column_title">
-                            	나이:
+                            	Age:
                         </div>
                         <div class="tourGuideContentPage_main2-column_insert">
                             ${mainTourContentData.memberBasicVo.member_age }
@@ -145,7 +145,7 @@
                     </div>
                     <div class="tourGuideContentPage_main2-column tourGuideContentPage_guideInfo">
                         <div class="tourGuideContentPage_main2-column_title">
-                            	성별:
+                            	Gender:
                         </div>
                         <div class="tourGuideContentPage_main2-column_insert">
                             ${mainTourContentData.memberBasicVo.member_gender }
@@ -158,11 +158,11 @@
             </section>
             <!-- 가이드 게시글--투어정보-->
             <section class="tourGuideContentPage_main2-row">
-                    <div class="tourGuideContentPage_main2-row_text">투어정보</div>
+                    <div class="tourGuideContentPage_main2-row_text">TOur information</div>
                     <div class="tourGuideContentPage_main2-row_Box">
                         <div class="tourGuideContentPage_main2-column tourGuideContentPage_tourInfo">
                             <div class="tourGuideContentPage_main2-column_title">
-                                	연락처:
+                                	Phone:
                             </div>
                             <div class="tourGuideContentPage_main2-column_insert">
                                 ${mainTourContentData.memberBasicVo.member_kakao }
@@ -170,7 +170,7 @@
                         </div>
                         <div class="tourGuideContentPage_main2-column tourGuideContentPage_tourInfo">
                             <div class="tourGuideContentPage_main2-column_title">
-                                	최대모집인원:
+                                	Max Participants:
                             </div>
                             <div class="tourGuideContentPage_main2-column_insert">
                                 ${mainTourContentData.tourBasicVo.tour_max_number }
@@ -178,7 +178,7 @@
                         </div>
                         <div class="tourGuideContentPage_main2-column tourGuideContentPage_tourInfo">
                             <div class="tourGuideContentPage_main2-column_title">
-                                	이동수단:
+                                	Transportation:
                             </div>
                             <div class="tourGuideContentPage_main2-column_insert">
                                 ${mainTourContentData.tourBasicVo.tour_vehicle }
@@ -186,7 +186,7 @@
                         </div>
                         <div class="tourGuideContentPage_main2-column tourGuideContentPage_tourInfo">
                             <div class="tourGuideContentPage_main2-column_title">
-                                	투어날짜:
+                                	Tour date:
                             </div>
                             <div class="tourGuideContentPage_main2-column_insert">
                             	<fmt:parseDate var="tourDate" value="${mainTourContentData.tourBasicVo.tour_tourdate }" pattern="yyyy-MM-dd"/> 
@@ -197,7 +197,7 @@
                 </section>
                 <!-- 가이드 게시글--투어소개-->
                 <section class="tourGuideContentPage_main2-tourContent">
-                  <div class="tourGuideContentPage_main2-row_text">투어소개</div>
+                  <div class="tourGuideContentPage_main2-row_text">Tour contents</div>
                   <div class="tourGuideContentPage_main2-tourContentBox">
                      <div class="tourGuideContentPage-tourContent">
                         ${mainTourContentData.tourBasicVo.tour_content }
@@ -207,7 +207,7 @@
                 <div class="tourGuideContentPage_goBack">
                     <a href="./kindOfLocalPage?location_idx=${mainTourContentData.tourBasicVo.location_idx }">
                         <div class="tourGuideContentPage_goBack-btn">
-                            	목록
+                            	List
                         </div>
                     </a>
                 </div>
@@ -220,7 +220,7 @@
             	<c:when test="${empty memberSession }">
            			<a href="./loginPage" class="tourGuideContentPage_needLoginBox">
                 		<div class="tourGuideContentPage_needLogin">
-                    		예약신청은 로그인 이후 가능합니다
+                    		Reservation can be made after Sign in
                 		</div>
             		</a>
             	</c:when>    
@@ -230,7 +230,7 @@
             		<c:if test="${mainTourContentData.memberBasicVo.member_idx != memberSession.member_idx }">
              			<a href="./tourReservationPage?tour_idx=${mainTourContentData.tourBasicVo.tour_idx }" class="tourGuideContentPage_bookingBox">
                 			<div class="tourGuideContentPage_main3-bookingBtn">
-                    			예약하기
+                    			Book the tour!
                 			</div>
             			</a> 
             		</c:if>
@@ -238,19 +238,16 @@
             		<c:if test="${mainTourContentData.memberBasicVo.member_idx == memberSession.member_idx }">
             			<div class="tourGuideContentPage_updateDeleteBox">
                 				<a href="./tourContentUpdatePage?tour_idx=${mainTourContentData.tourBasicVo.tour_idx }" class="tourGuideContentPage_updateDeleteBox-column">
-                    				<div class="tourGuideContentPage_updateDeleteBox-Btn">수정</div>
+                    				<div class="tourGuideContentPage_updateDeleteBox-Btn">Edit</div>
                 				</a>
                 				<a href="./tourDeleteAction?tour_idx=${mainTourContentData.tourBasicVo.tour_idx }" class="tourGuideContentPage_updateDeleteBox-column">
-                    				<div class="tourGuideContentPage_updateDeleteBox-Btn">삭제</div>
+                    				<div class="tourGuideContentPage_updateDeleteBox-Btn">Delete</div>
                 				</a>
             			</div> 
             		</c:if>
             	</c:otherwise>
             </c:choose>
         </main>  
-
-
-        <div>--------footer--------</div>
     
 
 </body>
