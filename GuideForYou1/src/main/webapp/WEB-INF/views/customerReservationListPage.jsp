@@ -43,7 +43,7 @@
                 evt.currentTarget.className += " active";
                 }
         </script>
-        <title>게스트 투어예약 내역 </title>
+        <title>Guest tour Reservation list </title>
     </head>
     <body>
     
@@ -59,10 +59,10 @@
             			</a>
             			<div class="header_column2">
                 			<a href="./loginPage" class="headerWhenNotLogin headerWhenNotLogin_first login-blackLine_first ">
-                    			<div class="header-login blackText">로그인</div>
+                    			<div class="header-login blackText">Sign in</div>
                 			</a>
                 			<a href="./joinMemberPage" class="headerWhenNotLogin login-blackLine_second ">
-                    			<div class="header-join blackText">회원가입</div>
+                    			<div class="header-join blackText">Sign up</div>
                 			</a>
             			</div>
         			</div>
@@ -81,19 +81,19 @@
                         	<a href="./myPage" class="headerWhenLogin headerWhenLogin_first notLogin-blackLine_first">
                             	<c:choose>
                         			<c:when test="${memberSession.member_profile_photo == 'n' }">
-                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="MainImages/basicMemberProfile.jpg">
+                        				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="MainImages/basicMemberProfile.png">
                         			</c:when>
                         			<c:otherwise>
                         				<img alt="member_profile_photo" class="header_memberProfilePhoto" src="${memberSession.member_profile_photo }">
                         			</c:otherwise>
                         		</c:choose> 
-                            	<div class="header-row blackText">마이페이지</div>
+                            	<div class="header-row blackText">My page</div>
                         	</a>
                         	<a href="./logoutAction" class="headerWhenLogin headerWhenLogin_second notLogin-blackLine_second">
-                            	<div class="header-row blackText">로그아웃</div>
+                            	<div class="header-row blackText">Sign out</div>
                         	</a>
                         	<a href="./tourEnrollPage" class="headerWhenLogin headerWhenLogin_third notLogin-blackLine_third">
-                            	<div class="header-row blackText">투어게시</div>
+                            	<div class="header-row blackText">Post my tour</div>
                         	</a>
                     	</div>
                 	</div>
@@ -106,28 +106,28 @@
         
            
             <main class="guideReservationPeaple_main">
-            	<div class="guideReservationList_main_title">신청 투어 예약 확인</div>
+            	<div class="guideReservationList_main_title">Tour Reservation List</div>
     
      			<div class="discribe_title">
                 	<div class="guideReservationList_main_tab">
-                		<button class="guideReservationList_main_tablinks" onclick="openBoard(event, 'guide_party_b')">예약 확인중</button>
+                		<button class="guideReservationList_main_tablinks" onclick="openBoard(event, 'guide_party_b')">Confirming</button>
                     	<div class="guideReservationList_main_div"></div>
-                    	<button class="guideReservationList_main_tablinks" onclick="openBoard(event, 'guide_party_y')">예약 확정</button>
+                    	<button class="guideReservationList_main_tablinks" onclick="openBoard(event, 'guide_party_y')">Confirmed Tour</button>
                     	<div class="guideReservationList_main_div"></div>
-                    	<button class="guideReservationList_main_tablinks" onclick="openBoard(event, 'guide_party_n')">예약 거절</button>
+                    	<button class="guideReservationList_main_tablinks" onclick="openBoard(event, 'guide_party_n')">Rejected Tour</button>
                 	</div>
                 
                 	<div class="task container-fluid guide_navigation ">
                     	<div class="guide_nav title guidelList_content col-2"></div>
-                        <div class="guide_nav title guidelList_content col-3">가이드</div>
+                        <div class="guide_nav title guidelList_content col-3">Guide</div>
                         <div class="task_div"></div>
-                        <div class="guide_nav region guidelList_content col-3"> 투어</div>
+                        <div class="guide_nav region guidelList_content col-3">Tour</div>
                         <div class="task_div"></div>
-                        <div class="guide_nav date guidelList_content col-3">투어 날짜</div>
+                        <div class="guide_nav date guidelList_content col-3">Tour Date</div>
                         <div class="guide_nav title guidelList_content col-1"></div>
                   	</div>
               </div>
-                	<!--예약 확인중 리스트-->
+                	<!--Confirming list-->
 					<section id="guide_party_b" class=" guideReservationList_notcomp board_tabcontent">			
 					<c:forEach items="${customerReservationList }" var="customerRData">		
 						<c:if test="${customerRData.reservationBasicVo.reservation_confirm == 'b' }">			
@@ -149,14 +149,14 @@
                             		<fmt:formatDate value="${customertourdate}" pattern="yyyy-MM-dd"/>
 								</div>
                             	<div class="guidelList_task_div "></div>
-                            	<a href="./customerWatchTourReservationFormPage?reservation_idx=${customerRData.reservationBasicVo.reservation_idx }" class="n_guide_arrow col-2 watch_reservationList"><div>예약신청서 보기</div><i class="fas fa-chevron-right "></i></a>
+                            	<a href="./customerWatchTourReservationFormPage?reservation_idx=${customerRData.reservationBasicVo.reservation_idx }" class="n_guide_arrow col-2 watch_reservationList"><div>See reservation form</div><i class="fas fa-chevron-right "></i></a>
                     		</div>
                     	</c:if>        	
                     </c:forEach>
                     </section>
                    
                     
-                    <!--예약 확정 리스트-->
+                    <!--Confirmed List-->
                     <section id="guide_party_y" class="guideReservationList_comp board_tabcontent">
                     <c:forEach items="${customerReservationList }" var="customerRData">
                        <c:if test="${customerRData.reservationBasicVo.reservation_confirm == 'y' }">	
@@ -177,14 +177,14 @@
                             	<fmt:formatDate value="${customertourdate}" pattern="yyyy-MM-dd"/>
 							</div>
                             <div class="guidelList_task_div "></div>
-                            <a href="./customerWatchTourReservationFormPage?reservation_idx=${customerRData.reservationBasicVo.reservation_idx }" class="n_guide_arrow col-2 y_watch_reservationList"><div>예약신청서 보기</div><i class="fas fa-chevron-right "></i></a>
+                            <a href="./customerWatchTourReservationFormPage?reservation_idx=${customerRData.reservationBasicVo.reservation_idx }" class="n_guide_arrow col-2 y_watch_reservationList"><div></div><i class="fas fa-chevron-right "></i></a>
                         </div>
                        </c:if> 
                     </c:forEach>
                     </section>
                     
 
-                    <!--예약 거절 리스트-->
+                    <!--Canceled list-->
                     <section id="guide_party_n" class="guideReservationList_comp board_tabcontent">
                     <c:forEach items="${customerReservationList }" var="customerRData">
                       <c:if test="${customerRData.reservationBasicVo.reservation_confirm == 'n' }">
@@ -205,7 +205,7 @@
                             	<fmt:formatDate value="${customertourdate}" pattern="yyyy-MM-dd"/>
 							</div>
                             <div class="guidelList_task_div "></div>
-                            <a href="./customerWatchTourReservationFormPage?reservation_idx=${customerRData.reservationBasicVo.reservation_idx }" class="n_guide_arrow col-2 watch_reservationList"><div>예약신청서 보기</div><i class="fas fa-chevron-right "></i></a>
+                            <a href="./customerWatchTourReservationFormPage?reservation_idx=${customerRData.reservationBasicVo.reservation_idx }" class="n_guide_arrow col-2 watch_reservationList"><div>See reservation form</div><i class="fas fa-chevron-right "></i></a>
                         </div>
                         </c:if> 
                     </c:forEach>
@@ -213,10 +213,7 @@
                     
                     
 			</main>
-    
-    
-                <footer class="common_footer">공통 footer ui를 넣을 겁니다</footer>
-
+   
 
 		</div>
 		
